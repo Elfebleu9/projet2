@@ -6,36 +6,20 @@
 
 <section class="articles">
 
-    <article>
-        <h2>titre de l'article</h2>
-        <div class="metadata">Ecrit le 18/04/2019 à 0h00</div>
-        <div class="content">
-            <img src="http://placehold.it/350x150" alt="photo">
-            <p> Lorem ipsum dolor sit amet...</p>
-            <a href="{{path ('pjim2_show')}}" class="btn btn-primary">Lire la suite</a>
 
-        </div>
-    </article>
-    <article>
-        <h2>titre de l'article</h2>
-        <div class="metadata">Ecrit le 18/04/2019 à 0h00</div>
-        <div class="content">
-            <img src="http://placehold.it/350x150" alt="photo">
-            <p> Lorem ipsum dolor sit amet...</p>
-            <a href="{{path('pjim2_show')}}" class="btn btn-primary">Lire la suite</a>
+    {%for article in articles %}
+            <article>
+                <h2>{{ article.Titre }}</h2>
+                <div class="metadata">Ecrit le {{article.CreatedAt| date('d/m/Y')}} à {{article.CreatedAt|date('H:i')}}</div>
+                <div class="content">
+                    <img src="{{article.Image}}" alt="photo">
+                    {{article.Contenu |raw}}
+                    <a href="{{path ('pjim2_show',{'id':article.id})}}" class="btn btn-primary">Lire la suite</a>
 
-        </div>
-    </article>
-    <article>
-        <h2>titre de l'article</h2>
-        <div class="metadata">Ecrit le 18/04/2019 à 0h00</div>
-        <div class="content">
-            <img src="http://placehold.it/350x150" alt="photo">
-            <p> Lorem ipsum dolor sit amet...</p>
-            <a href="{{path ('pjim2_show')}}" class="btn btn-primary">Lire la suite</a>
-
-        </div>
-    </article>
+                </div>
+            </article>
+    {%endfor%}
+    
 </section>
 
 
