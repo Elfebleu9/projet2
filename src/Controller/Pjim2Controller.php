@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -38,18 +39,32 @@ class Pjim2Controller extends AbstractController
 
     /**
     * @Route("/pjim2/new", name="pjim2_create")
+    * @Route("/pjim2/{id}/edit", name="pjim2_edit")
     */
-    public function create(Request $request,ObjectManager $manager){
-        $article= new article();
+    public function form(Article $article=null,Request $request,ObjectManager $manager){
 
-        $form = $this->createFormBuilder($article)
-                ->add('Titre',TextType::class,['attr'=>['placeholder'=>"Titre de l'article"]])
-                ->add('Contenu', TextareaType::class, ['attr'=>['placeholder'=>"Contenu de l'article"]])
-                ->add('Image', TextType::class,['attr'=>['placeholder'=>"Image de l'article"]])
-                
-                ->getForm();
+        if(!$article){
+            $article= new article();}
 
-        return $this->render('pjim2/create.html.twig',[ 'formArticle'=>$form->createView()]);
+
+           $form=$this->createForm(ArticleType::class, $article);
+
+        $form->handleRequest($request);
+        
+        if($form->isSubmitted() && $form->isValid()){
+            if(!$article->getId()){
+            $article->setCreatedAt(new \Datetime());
+        }
+
+            $manager->persist($article);
+            $manager->flush();
+
+        return $this->redirectToRoute('pjim2_show',['id'=>$article->getId()]);
+        }
+
+        return $this->render('pjim2/create.html.twig',[
+            'formArticle'=>$form->createView(),
+            'editMode'=>$article->getId()!== null]);
     }
 
     /**
