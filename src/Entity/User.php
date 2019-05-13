@@ -3,11 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface,\Serializable
 {
     /**
      * @ORM\Id()
@@ -28,10 +30,14 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min="8", minMessage=" 8 caractères minimum")
+     * @Assert\EqualTo(propertyPath="Confirm_password", message="Vous devez confirmer ce mot de passe")
      */
     private $Password;
-
+    
     private $Confirm_password;
+
+  
 
     public function getId(): ?int
     {
@@ -84,5 +90,58 @@ class User
         $this->Confirm_password = $Confirm_password;
 
         return $this;
+
+
+        
     }
+
+    public function getSalt()
+    {
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
+        return null;
+    }
+
+
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials()
+    {
+    }
+
+    /** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            // see section on salt below
+            // $this->salt
+        ) = unserialize($serialized, array('allowed_classes' => false));
+    }
+
+
+
+
+
+
+
+
+
 }
