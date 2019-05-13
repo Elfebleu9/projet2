@@ -31,6 +31,8 @@ class User
      */
     private $Password;
 
+    private $Confirm_password;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +70,18 @@ class User
     public function setPassword(string $Password): self
     {
         $this->Password = $Password;
+
+        return $this;
+    }
+
+    public function getConfirmPassword(): ?string
+    {
+        return $this->Confirm_password;
+    }
+
+    public function setConfirmPassword(string $Confirm_password): self
+    {
+        $this->Confirm_password = $Confirm_password;
 
         return $this;
     }
