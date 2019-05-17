@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Commentaire;
 use App\Form\ArticleType;
+use App\Form\CommentType;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -70,9 +72,24 @@ class Pjim2Controller extends AbstractController
     /**
      * @Route("/pjim2/{id}", name="pjim2_show")
      */
-    public function show(Article $article){
+    public function show(Article $article, Request $request, ObjectManager $manager){
+
+        $comment= new Commentaire;
+
+        $form= $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $comment->setCreatedAt(new \DateTime())
+                    ->setArticle($article);
+            $manager->persist($comment);
+            $manager->flush();
+
+            return $this->redirectToRoute('pjim2_show',['id'=>$article->getId()]);
+        }
        
-        return $this->render('pjim2/show.html.twig', [ 'article'=>$article]);
+        return $this->render('pjim2/show.html.twig', 
+        [ 'article'=>$article,'commentForm'=>$form->createView()
+        ]);
     }
 
     
