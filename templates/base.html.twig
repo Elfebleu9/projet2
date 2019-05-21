@@ -50,13 +50,17 @@
                 </ul>
                 
             </div>
-        </nav>
-        <div class="container">
-        {% block body %}
-            <img src="{{ asset('../Img/Bima1.jpg') }}" alt="Symfony!"/>
+        </nav> 
 
-        
-        {% endblock %}
+       <!--<img src="{#{{ asset('/Img/Bima1.jpg') }}#}" alt="photo"/>-->
+        <div class="container">
+                
+
+            {% block body %}
+                
+
+            
+            {% endblock %}
         </div>
         {% block javascripts %}
             {{encore_entry_script_tags('app')}}
