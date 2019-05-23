@@ -20,9 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{path('home')}}" style="font-size:25px"><strong>Accueil</strong></a>
-                    </li>
+                    
                     
 
                     {% if not app.user %}                  <!-- switch nav bar connexion -->
@@ -36,6 +34,10 @@
                     </li>
 
                     {% else %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('home')}}" style="font-size:25px"><strong>Accueil</strong></a>
+                    </li>
 
                     <li class="nav-item ">
                         <a class="nav-link" href="{{path('pjim2')}}" style="font-size:25px"><strong>Article</strong></a>
@@ -56,7 +58,7 @@
         </nav> 
 
       
-        <div class="container">
+        {# <div class="container"> #}
                 
 
             {% block body %}
@@ -64,7 +66,7 @@
 
             
             {% endblock %}
-        </div>
+        {# </div> #}
         {% block javascripts %}
             {{encore_entry_script_tags('app')}}
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

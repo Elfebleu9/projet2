@@ -2,6 +2,7 @@
 
 {% block body%}
 
+    <div class="container">
     <article>
         <h2>{{ article.Titre }}</h2>
         <div class="metadata">Ecrit le {{article.CreatedAt| date('d/m/Y')}} à {{article.CreatedAt|date('H:i')}} dans la catégorie {{article.category.Titre}}</div>
@@ -48,5 +49,7 @@
     
     
     </section>
+
+    </div>
 
 {% endblock%}
