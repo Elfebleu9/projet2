@@ -4,31 +4,23 @@
 
 {% block body %}
 
-    <div class="bodyshow">
-
-        <div class="container">
-
-        <section class="articles">
+<section class="articles">
 
 
-            {%for article in articles %}
-                    <article>
-                        <h2>{{ article.Titre }}</h2>
-                        <div class="metadata">Ecrit le {{article.CreatedAt| date('d/m/Y')}} à {{article.CreatedAt|date('H:i')}}</div>
-                        <div class="content">
-                            <img src="{{article.Image}}" alt="photo">
-                            {{article.Contenu |raw}}
-                            <a href="{{path ('pjim2_show',{'id':article.id})}}" class="btn btn-primary">Lire la suite</a>
+    {%for article in articles %}
+            <article>
+                <h2>{{ article.Titre }}</h2>
+                <div class="metadata">Ecrit le {{article.CreatedAt| date('d/m/Y')}} à {{article.CreatedAt|date('H:i')}}</div>
+                <div class="content">
+                    <img src="{{article.Image}}" alt="photo">
+                    {{article.Contenu |raw}}
+                    <a href="{{path ('pjim2_show',{'id':article.id})}}" class="btn btn-primary">Lire la suite</a>
 
-                        </div>
-                    </article>
-            {%endfor%}
-            
-        </section>
-
-        </div>
-
-    </div>
+                </div>
+            </article>
+    {%endfor%}
+    
+</section>
 
 
 {% endblock %}
