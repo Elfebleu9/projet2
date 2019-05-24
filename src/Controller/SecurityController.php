@@ -45,20 +45,20 @@ class SecurityController extends AbstractController
          */
         public function login(){
 
-            // $user = new User();
+        //     // $user = new User();
 
-            // if ($user->isSubmitted() && $user->isValid()){
+        //     // if ($user->isSubmitted() && $user->isValid()){
 
-            //     return $this-> redirectToRoute('home1');
-            // }
+        //     //     return $this-> redirectToRoute('home1');
+        //     // }
 
-            // else {
+        //     // else {
 
-            // return $this-> redirectToRoute('home');
-            // }
+        //     // return $this-> redirectToRoute('home');
+        //     // }
 
-            return $this->render('security/login.html.twig');
-        }
+        //     return $this->render('security/login.html.twig');
+        // }
 
         /**
          * @Route("/deconnexion", name="security_logout")
