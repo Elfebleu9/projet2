@@ -46,13 +46,7 @@ class Pjim2Controller extends AbstractController
         return $this->render('pjim2/home1.html.twig');
     }
 
-    /**
-     * @Route("/{'id':user.id}", name="home1")
-     */
-    public function home1(){
-
-        return $this->render('pjim2/home1.html.twig');
-    }
+    
 
     /**
     * @Route("/pjim2/new", name="pjim2_create")

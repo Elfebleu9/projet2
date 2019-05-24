@@ -1,53 +1,57 @@
 {% extends 'base.html.twig' %}
 
-{% block body%}
+    {% block body%}
 
-    <article>
-        <h2>{{ article.Titre }}</h2>
-        <div class="metadata">Ecrit le {{article.CreatedAt| date('d/m/Y')}} à {{article.CreatedAt|date('H:i')}} dans la catégorie {{article.category.Titre}}</div>
-        <div class="content">
-            <img src="{{article.Image}}" alt="photo">
-            {{article.Contenu |raw}}
-        </div>
-    </article>
+            <div class="container">
 
-    <section id="commentaires">
-        <h1>{{ article.commentaires | length }} commentaires : </h1>
-        {% for commentaire in article.commentaires %}
-
-            <div class="comment">
-                <div class="row">
-                    <div class="col-3">
-                    {{commentaire.auteur}} (<small>{{commentaire.createdAt | date('d/m/Y à H:i')}}</small>)              
+                <article>
+                    <h2>{{ article.Titre }}</h2>
+                    <div class="metadata">Ecrit le {{article.CreatedAt| date('d/m/Y')}} à {{article.CreatedAt|date('H:i')}} dans la catégorie {{article.category.Titre}}</div>
+                    <div class="content">
+                        <img src="{{article.Image}}" alt="photo">
+                        {{article.Contenu |raw}}
                     </div>
+                </article>
+
+                <section id="commentaires">
+                    <h1>{{ article.commentaires | length }} commentaires : </h1>
+                    {% for commentaire in article.commentaires %}
+
+                        <div class="comment">
+                            <div class="row">
+                                <div class="col-3">
+                                {{commentaire.auteur}} (<small>{{commentaire.createdAt | date('d/m/Y à H:i')}}</small>)              
+                                </div>
+                            
+                                <div class="col">
+                                {{commentaire.contenu | raw}}
+                                
+                                </div>
+                            </div>
+                        
+                        </div>
+                    {% endfor %}
+                    {% if app.user %}
+                    {{ form_start(commentForm) }}
+                    {{ form_row(commentForm.Auteur, {'attr': {'placeholder': " Votre nom ..."}})}}
+                    {{ form_row(commentForm.Contenu, {'attr' :{ 'placeholder' : " Votre commentaire ..."}})}}
+
+                    <button type="submit" class="btn btn-success"> Soumettre </button>
+
+                    {{ form_end(commentForm) }}
+
+                    {% else %}
+
+                    <h1> Veuillez vous connecter pour poster un commentaire </h1>
+                    <a  href={{ path('security_login')}} class="btn btn-primary">Connexion</a>
+
+                    {% endif %}
+
                 
-                    <div class="col">
-                    {{commentaire.contenu | raw}}
-                    
-                    </div>
-                </div>
-            
+                
+                </section>
+
             </div>
-        {% endfor %}
-        {% if app.user %}
-        {{ form_start(commentForm) }}
-        {{ form_row(commentForm.Auteur, {'attr': {'placeholder': " Votre nom ..."}})}}
-        {{ form_row(commentForm.Contenu, {'attr' :{ 'placeholder' : " Votre commentaire ..."}})}}
-
-        <button type="submit" class="btn btn-success"> Soumettre </button>
-
-        {{ form_end(commentForm) }}
-
-        {% else %}
-
-        <h1> Veuillez vous connecter pour poster un commentaire </h1>
-        <a  href={{ path('security_login')}} class="btn btn-primary">Connexion</a>
-
-        {% endif %}
-
-    
-    
-    </section>
 
 
-{% endblock%}
+    {% endblock%}
