@@ -31,7 +31,7 @@ class SecurityController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            echo 'Vous êtes inscrit sur le site';
+           
 
             return $this->redirectToRoute('security_login');
         }
@@ -44,6 +44,18 @@ class SecurityController extends AbstractController
          * @Route("/connexion" , name="security_login")
          */
         public function login(){
+
+            // $user = new User();
+
+            // if ($user->isSubmitted() && $user->isValid()){
+
+            //     return $this-> redirectToRoute('home1');
+            // }
+
+            // else {
+
+            // return $this-> redirectToRoute('home');
+            // }
 
             return $this->render('security/login.html.twig');
         }

@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<h1> Connexion </h1>
+<h1 id="ce"> Connexion </h1><br/><br/><br/><br/><br/>
 
 <form action="{{ path('security_login') }}" method="post">
 
@@ -12,16 +12,19 @@
         <input placeholder="Adresse email..." required name="_username"
          type="text" class="form-control">
     
-    </div>
+    </div><br/><br/>
      <div class="form-group">
         <input placeholder="Mot de passe..." required name="_password" 
         type="password" class="form-control"> 
     
-    </div>
+    </div><br/><br/>
     <div class="form-group">
         <button type="submit" class="btn btn-success"> Connexion </button>
 
     </div>
+
+ 
+
     
 </form>
 

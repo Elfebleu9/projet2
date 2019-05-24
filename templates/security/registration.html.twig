@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<h1>Inscription</h1>
+<h1 id="ce">Inscription</h1><br/><br/>
 
 {{ form_start(form) }}
 
@@ -14,5 +14,11 @@
 <button type="submit" class="btn btn-success">Inscription</button>
 
 {{ form_end(form)}}
+
+{# {% if 'email'-> isCheked() && 'email'-> isValid() %}
+
+   Vous êtes connecté(e).
+
+{% endif %} #}
 
 {% endblock %}
