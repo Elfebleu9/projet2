@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Entity\Commentaire;
 use App\Form\ArticleType;
 use App\Form\CommentType;
+use App\Entity\Commentaire;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -77,6 +77,7 @@ class Pjim2Controller extends AbstractController
             'formArticle'=>$form->createView(),
             'editMode'=>$article->getId()!== null]);
     }
+
 
     /**
      * @Route("/pjim2/{id}", name="pjim2_show")
