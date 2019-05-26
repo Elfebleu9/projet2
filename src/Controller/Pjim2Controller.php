@@ -36,7 +36,7 @@ class Pjim2Controller extends AbstractController
      */
     public function home(){
 
-        return $this->render('pjim2/home.html.twig');
+        return $this->render('Procédural.html.twig');
     }
 
      /**
@@ -45,6 +45,15 @@ class Pjim2Controller extends AbstractController
     public function home1(){
         return $this->render('pjim2/home1.html.twig');
     }
+
+     /**
+     * @Route("/h2", name="home2")
+     */
+    public function home2(){
+        return $this->render('pjim2/home.html.twig');
+    }
+
+
 
     
 

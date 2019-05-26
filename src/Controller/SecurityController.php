@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -61,6 +61,20 @@ class SecurityController extends AbstractController
          * @Route("/deconnexion", name="security_logout")
          */
         public function logout(){}
+
+            // private $security;
+
+            // public function __construct(Security $security)
+            // {
+               
+            //     $this->security = $security;
+            // }
+        
+            // public function capteUser()
+            // {
+               
+            //     $user = $this->security->getUsername();
+            // }
 
 
 

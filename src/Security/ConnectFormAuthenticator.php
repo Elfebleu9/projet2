@@ -84,13 +84,13 @@ class ConnectFormAuthenticator extends AbstractFormLoginAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
-       // return new RedirectResponse($this->urlGenerator->generate('home'));
+        return new RedirectResponse($this->urlGenerator->generate('home1'));
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
         // throw new \Exception(new RedirectResponse($this->urlGenerator->generate('home')));
     }
 
     protected function getLoginUrl()
     {
-        return $this->urlGenerator->generate('home');
+        return $this->urlGenerator->generate('home2');
     }
 }
