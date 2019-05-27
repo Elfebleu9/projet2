@@ -30,13 +30,13 @@
 					<div id="boxfoto" class=" media-disparait"><img src="Img/Img9.jpg" id="Ph7" alt="photo"></div>
 					
 					<div id="boutons">
-						<li><a href="http://127.0.0.1:8000/inscription" class="button">Je m'inscris</a></li>
+						<li><a href="{{path('security_registration')}}" class="button">Je m'inscris</a></li>
 
 						
 						{% if not app.user %} 
-						<li><a href="http://127.0.0.1:8000/login" class="button">Je me connecte</a></li> 
+						<li><a href="{{path('app_login')}}" class="button">Je me connecte</a></li> 
 						{% else %}
-						<li><a href="http://127.0.0.1:8000/deconnexion" class="button">Je me déconnecte</a></li>
+						<li><a href="{{path('security_logout')}}" class="button">Je me déconnecte</a></li>
 						{% endif %} 
 					</div>
 					<div id="espace"></div>
@@ -52,7 +52,7 @@
 			
 			<div class="flex">
 				<!-- container Wordpress ( statique )-->
-				<a href="../../wordpress"  id="wp">
+				<a href="http://127.0.0.1:9999/wordpress"  id="wp">
 					<div class="auto-height"  >
 							<p class="para1">Où trouver son logement neuf  en Ile de France ?</p>
 					</div>			
