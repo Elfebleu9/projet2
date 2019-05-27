@@ -1,7 +1,13 @@
 body{
+    margin:0px;
+    padding:0px;
 	font-family: 'Open Sans', sans-serif;
     background:url("Img/Bima1.jpg") no-repeat center fixed;
     background-size: cover;
+}
+
+li{
+    list-style: none;
 }
 
 #header{
@@ -30,10 +36,6 @@ body{
 
 #espace {
     width:5%;
-}
-
-li{
-    list-style: none;
 }
 
 #boutons{
@@ -207,13 +209,6 @@ li:hover .button{
     width:100%;
 }
 
-/* #wp a{   
-    margin-left:37%;
-    text-align:center;
-    color:red;
-    font-size:30px;    
-} */
-
 #pe{	
 	margin:0;
     padding:0;
@@ -267,10 +262,9 @@ li:hover .button{
 .auto-height{
     height: auto;
 }
-
-@media all and (max-width: 1024px){
-
+@media screen and (max-width: 1024px){
     /* disparition photo header*/
+    
     .media-disparait{
         display: none;
     }
@@ -286,4 +280,42 @@ li:hover .button{
     #pe{
         width: 75%;
     }
+
+    #container{
+        display:block;
+    }
+ 
+    #cont1, #cont2, #cont3{
+        width: 100%;
+        border-right: none;
+        border-left: none;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom:3px;
+    }
+
+    #cont1,#cont3{
+        padding:10px;
+        
+    }
+
+}
+
+@media screen and (max-width: 640px){
+
+    /* disparition texte d'accroche */
+   .slogan{
+       display: none;
+   }
+   #header{         /* répartition espace logo/boutons */
+    display: flex;
+   }
+   #logo{
+       width:30%;
+   }
+  #boutons{
+      width:60%;
+  }
+
+  
 }
