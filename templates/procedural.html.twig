@@ -1,0 +1,192 @@
+<?php
+
+
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>Projet Immo</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style2.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+	
+	</head>
+	<body>
+	
+			<header>
+
+				{% block head %}
+			
+				<div id="header">
+					<div id="espace"></div>
+					<div  ><img src="Img/logo2.png" alt="photo"></div>
+					<p  style="font-weight:bold; font-size:28px;"> Le logement neuf en Île de France</p>
+					<div id="espace"></div>
+					<div id="espace"></div>
+					<!-- responsive : disparition photo header -->
+					<div id="boxfoto" class=" media-disparait"><img src="Img/Img9.jpg" id="Ph7" alt="photo"></div>
+					
+					<div id="boutons">
+						<li><a href="http://127.0.0.1:8000/inscription" class="button">Je m'inscris</a></li>
+
+						
+						{% if not app.user %} 
+						<li><a href="http://127.0.0.1:8000/login" class="button">Je me connecte</a></li> 
+						{% else %}
+						<li><a href="http://127.0.0.1:8000/deconnexion" class="button">Je me déconnecte</a></li>
+						{% endif %} 
+					</div>
+					<div id="espace"></div>
+				</div>
+
+				{% endblock %}
+		
+			</header>
+			
+			<br/><br/><br/><br/><br/><br/>
+
+
+			
+			<div class="flex">
+				<!-- container Wordpress ( statique )-->
+				<a href="../../wordpress"  id="wp">
+					<div class="auto-height"  >
+							<p class="para1">Où trouver son logement neuf  en Ile de France ?</p>
+					</div>			
+				</a>
+
+				<!-- container Symfony ( dynamique )-->
+				<a href="http://127.0.0.1:8000"  id="pe">
+					<div  class="auto-height">
+						<p class="para1"> Vous souhaitez acquérir un logement neuf ? Nous vous accompagnons dans votre projet.</p>
+					</div>
+				</a>
+	
+			</div>
+			<p> &nbsp&nbsp&nbsp</p>
+			<div id="container">
+				
+				<div id="cont1"><h2 id="he1"> Actualités</h2>
+					<div id="actinfo">
+						<p><strong>Pourquoi l'utiliser?</strong><br/><br/>
+						Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans.</p><br/>
+						<p><strong>Où puis-je m'en procurer?</strong></p><br/>
+						Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
+						<p><strong>Quelle solution ?</strong></p>
+						Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum.
+					</div>		
+				</div>
+
+				<div id="cont2">
+					<div id="slider">
+						<figure id="PS">
+							<img src="Img/imago1.jpg" alt="photo">
+							<img src="Img/imago2.jpg" alt="photo">
+							<img src="Img/imago3.jpg" alt="photo">
+							<img src="Img/imago4.jpg" alt="photo">
+							<img src="Img/imago5.jpg" alt="photo">
+							<img src="Img/imago6.jpg" alt="photo">
+							<img src="Img/imago7.jpg" alt="photo">
+							<img src="Img/imago8.jpg" alt="photo">
+							<img src="Img/imago9.jpg" alt="photo">
+							<img src="Img/imago10.jpg" alt="photo">
+						</figure>
+					</div>
+				</div>
+				<div id="cont3" ><h2 id="he1"> Infos</h2>
+					<div id="actinfo">
+						<div id="Ii1">
+							<p><strong>Terrains en Seine et Marne</strong><br/><br/>
+							Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.</p>
+							<div id="Ii2">
+								<img src="Img/iminf.jpg" alt="photo"><br/><br/>
+							</div>
+						</div>
+						<p><strong>Qu'est-ce que le Lorem Ipsum?</strong><br/><br/>
+						Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L'avantage de le mettre en latin est que l'opérateur sait au premier coup d'oeil que la page contenant ces lignes n'est pas valide, et surtout l'attention du client n'est pas dérangée par le contenu, il demeure concentré seulement sur l'aspect graphique.<br/><br/>
+
+Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final.</p>
+					</div>
+
+				</div>
+				<p> &nbsp&nbsp&nbsp</p>
+			</div>
+		
+		
+			
+			<!-- <p>&nbsp&nbsp&nbsp</p>
+			<p>&nbsp&nbsp&nbsp</p>
+			<p>&nbsp&nbsp&nbsp</p> -->
+
+			<footer>
+				<div id="footer">
+					
+					<div class="infos">
+						<div id="Lien">
+							<p>Contact :</p>
+							<p>N° tel : 01.02.03.04.05</p>
+							<p><a href="Mentions légales.html" target="_blank" style="text-decoration:none">Mentions légales</a></p>
+							<p><a href="Politiques.html" target="_blank" style="text-decoration:none">Politiques de confidentialité</a></p>
+						</div>
+						<div id="App">
+						<p> Nos applications : </p>
+						<a href=" " target="_blank"> <img src="img/Icone4.png" alt="And"></a>&nbsp&nbsp
+						<a href=" "target="_blank"> <img src="img/Icone5.png" alt="IPh"></a>						
+
+						</div>
+
+						<div id="Icon">
+							<p> Réseaux sociaux : </p>
+							<a href="http://facebook.fr" target="_blank"> <img src="img/Icone1.jpg" alt="Fb"></a>&nbsp&nbsp
+							<a href="http://twitter.com" target="_blank"> <img src="img/Icone2.jpg" alt="Twit"></a>&nbsp&nbsp
+							<a href="http://whatsapp.com" target="_blank"> <img src="img/Icone3.png" alt="WhAp"></a>
+						</div>
+		
+		
+		
+		
+					</div>
+					
+				</div>
+	
+	
+			</footer>
+
+
+	</body>
+	
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+?>

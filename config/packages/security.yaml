@@ -19,12 +19,18 @@ security:
             provider: in_database
 
             form_login:
-                login_path: security_login
-                check_path: security_login
+                login_path: app_login
+                check_path: app_login
+               
+               
 
             logout: 
                 path: security_logout
                 target: home
+            guard:
+                authenticators:
+                    - App\Security\ConnectFormAuthenticator
+           
             # activate different ways to authenticate
 
             # http_basic: true

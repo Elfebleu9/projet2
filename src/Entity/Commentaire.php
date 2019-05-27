@@ -22,7 +22,7 @@ class Commentaire
     private $Auteur;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private $Contenu;
 
@@ -32,7 +32,7 @@ class Commentaire
     private $createdAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Article", inversedBy="commentaires")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Article", inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
     private $article;
