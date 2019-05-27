@@ -59,7 +59,12 @@
 				</a>
 
 				<!-- container Symfony ( dynamique )-->
-				<a href="http://127.0.0.1:8000"  id="pe">
+
+				{% if not app.user %}
+				<a href="{{path('home2')}}"  id="pe">
+				{% else %}
+				<a href="{{path('home1')}}"  id="pe">
+				{% endif %}
 					<div  class="auto-height">
 						<p class="para1"> Vous souhaitez acquérir un logement neuf ? Nous vous accompagnons dans votre projet.</p>
 					</div>
