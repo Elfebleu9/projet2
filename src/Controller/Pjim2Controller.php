@@ -36,7 +36,7 @@ class Pjim2Controller extends AbstractController
      */
     public function home(){
 
-        return $this->render('Procédural.html.twig');
+        return $this->render('procedural.html.twig');
     }
 
      /**
