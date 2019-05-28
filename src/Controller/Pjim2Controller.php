@@ -53,6 +53,13 @@ class Pjim2Controller extends AbstractController
         return $this->render('pjim2/home.html.twig');
     }
 
+    //  /**
+    //  * @Route("/pjim2/renseignement", name="renseignt")
+    //  */
+    // public function renseignt(){
+    //     return $this->render('pjim2/renseignement.html.twig');
+    // }
+
 
 
     

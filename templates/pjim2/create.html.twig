@@ -9,10 +9,18 @@
 
             <div class="container">
 
+                        <br/><br/>
+
                 
 
-                    
-                        <h1> Création d'un article</h1>
+                        {% if editMode %}
+                        <h1 id="ce"> Modification de l'article</h1>
+
+                        {% else %}
+
+                        <h1 id="ce"> Création d'un article</h1>
+
+                        {% endif %}
 
 
                         {{form_start(formArticle)}}
