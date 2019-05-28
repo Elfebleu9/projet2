@@ -53,12 +53,40 @@ class Pjim2Controller extends AbstractController
         return $this->render('pjim2/home.html.twig');
     }
 
-    //  /**
-    //  * @Route("/pjim2/renseignement", name="renseignt")
-    //  */
-    // public function renseignt(){
-    //     return $this->render('pjim2/renseignement.html.twig');
-    // }
+     /**
+     * @Route("/renseignement", name="renseignt")
+     */
+    public function renseignt(){
+        return $this->render('pjim2/renseignement.html.twig');
+    }
+     
+     /**
+     * @Route("/financement", name="financnt")
+     */
+    public function financnt(){
+        return $this->render('pjim2/financement.html.twig');
+    }
+
+     /**
+     * @Route("/recherche", name="recherche")
+     */
+    public function recherche(){
+        return $this->render('pjim2/recherche.html.twig');
+    }
+
+     /**
+     * @Route("/reservation", name="reserve")
+     */
+    public function reserve(){
+        return $this->render('pjim2/reserve.html.twig');
+    }
+
+     /**
+     * @Route("/recuperation", name="recup")
+     */
+    public function recup(){
+        return $this->render('pjim2/recup.html.twig');
+    }
 
 
 
