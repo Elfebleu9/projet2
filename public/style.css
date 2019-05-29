@@ -1,0 +1,12 @@
+body{
+    margin:0px;
+    padding:0px;
+	font-family: 'Open Sans', sans-serif;
+    background:url("Img/Bima1.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+#container{
+    display:flex;
+    justify-content:space-around; 
+    border:black 2px solid;  
+}
