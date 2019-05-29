@@ -187,8 +187,8 @@ li:hover .button{
 	margin:0;
 	padding:0;
 	border:solid 1px black;
-	width:44%;
-    height:500px; 
+	width:40%;
+    height:400px; 
     min-width: 400px;
     background : url("Img/Img1.jpg") no-repeat center;
     background-size: cover;
@@ -215,8 +215,8 @@ li:hover .button{
     display:flex;
     align-items:flex-end;	
 	border:solid 1px black;
-	width:44%;
-    height:500px;
+	width:40%;
+    height:400px;
     min-width: 400px;
     background : url("Img/Transimmo6.jpg") no-repeat center;
     background-size: cover;
