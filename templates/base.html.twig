@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Quoi de neuf ?{% endblock %}</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+        <link rel="stylesheet" href="style2.css" type="text/css">
         {% block stylesheets %}
            {{encore_entry_link_tags('app')}}
         
@@ -59,7 +60,38 @@
             </div>
         </nav> 
 
+       
+
             {% block body %}{% endblock %}
+
+          <footer>
+				<div id="footer">
+					
+					<div class="infos">
+						<div id="Lien">
+							<p>Contact :</p>
+							<p>N° tel : 01.02.03.04.05</p>
+							<p><a href="Mentions légales.html" target="_blank" style="text-decoration:none">Mentions légales</a></p>
+							<p><a href="Politiques.html" target="_blank" style="text-decoration:none">Politiques de confidentialité</a></p>
+						</div>
+						<div id="App">
+							<p> Nos applications : </p>
+							<a href=" " target="_blank"> <img src="img/Icone4.png" alt="And"></a>&nbsp&nbsp
+							<a href=" "target="_blank"> <img src="img/Icone5.png" alt="IPh"></a>						
+
+						</div>
+
+						<div id="Icon">
+							<p> Réseaux sociaux : </p>
+							<a href="http://facebook.fr" target="_blank"> <img src="img/Icone1.jpg" alt="Fb"></a>&nbsp&nbsp
+							<a href="http://twitter.com" target="_blank"> <img src="img/Icone2.jpg" alt="Twit"></a>&nbsp&nbsp
+							<a href="http://whatsapp.com" target="_blank"> <img src="img/Icone3.png" alt="WhAp"></a>
+						</div>		
+					</div>
+					
+				</div>
+	
+			</footer>  
         
         {% block javascripts %}
             {{encore_entry_script_tags('app')}}

@@ -32,7 +32,7 @@
 					<div id="boutons">
 						<li><a href="{{path('security_registration')}}" class="button">Je m'inscris</a></li>
 
-						
+					<!-- switch bouton connexion-->	
 						{% if not app.user %} 
 						<li><a href="{{path('app_login')}}" class="button">Je me connecte</a></li> 
 						{% else %}
@@ -60,6 +60,7 @@
 
 				<!-- container Symfony ( dynamique )-->
 
+				<!-- switch page d'accueil-->
 				{% if not app.user %}
 				<a href="{{path('home2')}}"  id="pe">
 				{% else %}
@@ -72,8 +73,8 @@
 	
 			</div>
 			<p> &nbsp&nbsp&nbsp</p>
-			<div id="container">
-				
+
+			<div id="container">				
 				<div id="cont1"><h2 id="he1"> Actualités</h2>
 					<div id="actinfo">
 						<p><strong>Pourquoi l'utiliser?</strong><br/><br/>
@@ -119,12 +120,6 @@ Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayan
 				</div>
 				<p> &nbsp&nbsp&nbsp</p>
 			</div>
-		
-		
-			
-			<!-- <p>&nbsp&nbsp&nbsp</p>
-			<p>&nbsp&nbsp&nbsp</p>
-			<p>&nbsp&nbsp&nbsp</p> -->
 
 			<footer>
 				<div id="footer">
@@ -137,9 +132,9 @@ Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayan
 							<p><a href="Politiques.html" target="_blank" style="text-decoration:none">Politiques de confidentialité</a></p>
 						</div>
 						<div id="App">
-						<p> Nos applications : </p>
-						<a href=" " target="_blank"> <img src="img/Icone4.png" alt="And"></a>&nbsp&nbsp
-						<a href=" "target="_blank"> <img src="img/Icone5.png" alt="IPh"></a>						
+							<p> Nos applications : </p>
+							<a href=" " target="_blank"> <img src="img/Icone4.png" alt="And"></a>&nbsp&nbsp
+							<a href=" "target="_blank"> <img src="img/Icone5.png" alt="IPh"></a>						
 
 						</div>
 
@@ -148,32 +143,15 @@ Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayan
 							<a href="http://facebook.fr" target="_blank"> <img src="img/Icone1.jpg" alt="Fb"></a>&nbsp&nbsp
 							<a href="http://twitter.com" target="_blank"> <img src="img/Icone2.jpg" alt="Twit"></a>&nbsp&nbsp
 							<a href="http://whatsapp.com" target="_blank"> <img src="img/Icone3.png" alt="WhAp"></a>
-						</div>
-		
-		
-		
-		
+						</div>		
 					</div>
 					
 				</div>
 	
-	
 			</footer>
-
 
 	</body>
 	
-
-
-
-
-
-
-
-
-
-
-
 </html>
 
 
