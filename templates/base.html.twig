@@ -2,13 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Quoi de neuf ?{% endblock %}</title>
-        <link rel="icon" href="Img/favicon-16x16.png" type="image/png" sizes="16x16">
+        <title>{% block title %}Quoi de 9 ?{% endblock %}</title>
+        <link rel="icon" href="../Img/favicon-16x16.png" type="image/png" sizes="16x16">
         <link rel="manifest" href="/manifest.json">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-
         <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
         <link rel="stylesheet" href="style2.css" type="text/css">
         {% block stylesheets %}
@@ -30,35 +29,35 @@
 
                     {% if not app.user %}                  <!-- switch nav bar connexion -->
 
-                     <li class="nav-item">
-                        <a class="nav-link" href="{{path('security_registration')}}" style="font-size:25px"><strong>Inscription</strong></a>
-                    </li>
-                   
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('security_registration')}}" style="font-size:25px"><strong>Inscription</strong></a>
+                        </li>
+                    
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{path('app_login')}}" style="font-size:25px"><strong>Connexion</strong></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('app_login')}}" style="font-size:25px"><strong>Connexion</strong></a>
 
-                    </li>
+                        </li>
 
                     {% else %}
 
-                        
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{path('home1')}}" style="font-size:25px"><strong>Accueil</strong></a>
                             
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('home1')}}" style="font-size:25px"><strong>Accueil</strong></a>
+                                
+                                
+
+                        {# <li class="nav-item ">
+                            <a class="nav-link" href="{{path('pjim2')}}" style="font-size:25px"><strong>Article</strong></a>#}
+                        </li>
+                        {#<li class="nav-item">
+                            <a class="nav-link" href="{{path('pjim2_create')}}" style="font-size:25px"><strong>Créer un article</strong></a>
+                        </li> #}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('security_logout')}}" style="font-size:25px"><strong>Déconnexion</strong></a>
+
+                        </li>
                             
-
-                            {# <li class="nav-item ">
-                                <a class="nav-link" href="{{path('pjim2')}}" style="font-size:25px"><strong>Article</strong></a>#}
-                            </li>
-                            {#<li class="nav-item">
-                                <a class="nav-link" href="{{path('pjim2_create')}}" style="font-size:25px"><strong>Créer un article</strong></a>
-                            </li> #}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{path('security_logout')}}" style="font-size:25px"><strong>Déconnexion</strong></a>
-
-                            </li>
-                        
                     {% endif %}
                     
                 </ul>

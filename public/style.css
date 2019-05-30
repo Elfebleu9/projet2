@@ -10,3 +10,8 @@ body{
     justify-content:space-around; 
     border:black 2px solid;  
 }
+
+#ce{
+    text-align: center;       
+}
+

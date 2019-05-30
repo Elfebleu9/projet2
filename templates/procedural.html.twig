@@ -6,7 +6,7 @@
 <html>
 	<head>
 	
-		<title>Projet Immo</title>
+		<title>Quoi de 9 ?</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style2.css" type="text/css">
@@ -20,35 +20,37 @@
 
 				{% block head %}
 			
-				<div id="header">
-					<div id="espace"></div>
-					<div id="logo" ><img src="Img/logo2.png" alt="photo"></div>
-					<p  class="slogan" style="font-weight:bold; font-size:28px;"> Le logement neuf en Île de France</p>
-					<div id="espace"></div>
-					<div id="espace"></div>
-					<!-- responsive : disparition photo header -->
-					<div id="boxfoto" class=" media-disparait"><img src="Img/Img9.jpg" id="Ph7" alt="photo"></div>
-					
-					<div id="boutons">
-						<li><a href="{{path('security_registration')}}" class="button">Je m'inscris</a></li>
+					<div id="header">
+						<div id="espace"></div>
+						<div id="logo" ><img src="Img/logo2.png" alt="photo"></div>
+						<p  class="slogan" style="font-weight:bold; font-size:28px;"> Le logement neuf en Île de France</p>
+						<div id="espace"></div>
+						<div id="espace"></div>
+						<!-- responsive : disparition photo header -->
+						<div id="boxfoto" class=" media-disparait"><img src="Img/Img9.jpg" id="Ph7" alt="photo"></div>
+						
+						<div id="boutons">
+							<li><a href="{{path('security_registration')}}" class="button">Je m'inscris</a></li>
 
-					<!-- switch bouton connexion-->	
-						{% if not app.user %} 
-						<li><a href="{{path('app_login')}}" class="button">Je me connecte</a></li> 
-						{% else %}
-						<li><a href="{{path('security_logout')}}" class="button">Je me déconnecte</a></li>
-						{% endif %} 
+						<!-- switch bouton connexion-->	
+							{% if not app.user %} 
+							<li><a href="{{path('app_login')}}" class="button">Je me connecte</a></li> 
+							{% else %}
+							<li><a href="{{path('security_logout')}}" class="button">Je me déconnecte</a></li>
+							{% endif %} 
+						</div>
+						<div id="espace"></div>
 					</div>
-					<div id="espace"></div>
-				</div>
 
 				{% endblock %}
 		
 			</header>
 			
 			<br/><br/><br/><br/><br/><br/>
+			
+			<h2><p id="ce"><strong> Passer du rêve à la réalité pour acquérir un bien n'est pas une chose aisée.</strong></p></h2>
 
-
+			
 			
 			<div class="flex">
 				<!-- container Wordpress ( statique )-->
@@ -114,7 +116,7 @@
 						<p><strong>Qu'est-ce que le Lorem Ipsum?</strong><br/><br/>
 						Généralement, on utilise un texte en faux latin (le texte ne veut rien dire, il a été modifié), le Lorem ipsum ou Lipsum, qui permet donc de faire office de texte d'attente. L'avantage de le mettre en latin est que l'opérateur sait au premier coup d'oeil que la page contenant ces lignes n'est pas valide, et surtout l'attention du client n'est pas dérangée par le contenu, il demeure concentré seulement sur l'aspect graphique.<br/><br/>
 
-Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final.</p>
+						Ce texte a pour autre avantage d'utiliser des mots de longueur variable, essayant de simuler une occupation normale. La méthode simpliste consistant à copier-coller un court texte plusieurs fois (« ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ceci est un faux-texte ») a l'inconvénient de ne pas permettre une juste appréciation typographique du résultat final.</p>
 					</div>
 
 				</div>

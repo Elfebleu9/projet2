@@ -30,6 +30,12 @@ li{
     font-size: 33px;
 }
 
+h2{
+    margin-left:20%;
+    margin-bottom:50px;
+    font-family: 'Staatliches', cursive;
+}
+
 #boxfoto{
     width: 15%;
 }
