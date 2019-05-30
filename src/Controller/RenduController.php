@@ -33,6 +33,22 @@ class RenduController extends AbstractController
         return $this->render('rendu/invest.html.twig');
     }
 
+    /**
+     * @Route("/rendu/reussirachat2", name="reussite2")
+     */
+    public function reussite2(){
+
+        return $this->render('rendu/reussir2.html.twig');
+    }
+
+     /**
+     * @Route("/rendu/investissement2", name="invest2")
+     */
+    public function investissement2(){
+
+        return $this->render('rendu/invest2.html.twig');
+    }
+
      /**
      * @Route("/rendu/conseilachat", name="conseil")
      */
