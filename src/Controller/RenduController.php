@@ -24,4 +24,44 @@ class RenduController extends AbstractController
 
         return $this->render('rendu/reussir.html.twig');
     }
+
+     /**
+     * @Route("/rendu/reussirachat", name="reussite")
+     */
+    public function reussite1(){
+
+        return $this->render('rendu/reussir.html.twig');
+    }
+
+     /**
+     * @Route("/rendu/investissement", name="invest")
+     */
+    public function investissement(){
+
+        return $this->render('rendu/invest.html.twig');
+    }
+
+     /**
+     * @Route("/rendu/conseilachat", name="conseil")
+     */
+    public function conseil(){
+
+        return $this->render('rendu/conseil.html.twig');
+    }
+
+    //  /**
+    //  * @Route("/rendu/reussirachat", name="reussite")
+    //  */
+    // public function reussite4(){
+
+    //     return $this->render('rendu/reussir.html.twig');
+    // }
+
+    //  /**
+    //  * @Route("/rendu/reussirachat", name="reussite")
+    //  */
+    // public function reussite5(){
+
+    //     return $this->render('rendu/reussir.html.twig');
+    // }
 }
