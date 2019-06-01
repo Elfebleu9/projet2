@@ -4,54 +4,41 @@
 
     <div class="container">
 
-            <br/>
-            
-
             <h1 id="ce"> Bonjour  {{app.user.username}} ! </h1>
-
             
             <br/><br/><br/><br/><br/>
             <h3 id="ce"> Voici les différentes étapes à suivre pour acquérir un bien neuf.</p>
             <br/><br/>
     </div> 
             <div class="badges">
-                <a class="boite" id="b1" href="{{path('renseignt')}}" >
+                <a  id="b1" href="{{path('renseignt')}}" >
                     <div>                  
-                        <p>  Je me renseigne </p>
-                        
-                    </div>
-                     
+                        <p>  Je me renseigne </p>                       
+                    </div>                    
                 </a>
                 
-                <a class="boite" id="b2" href="{{path('financnt')}}" >
+                <a  id="b2" href="{{path('financnt')}}" >
                     <div>                  
                         <p> Je monte mon <br/>&nbsp financement </p>
                     </div>
                 </a>
-                    
-                
-               
-                 <a class="boite" id="b3" href="{{path('recherche')}}" >
+                                  
+                 <a  id="b3" href="{{path('recherche')}}" >
                     <div>                  
                         <p>  Je recherche mon bien </p>
                     </div>
                 </a>
-                 <a class="boite" id="b4" href="{{path('reserve')}}" >
+                <a  id="b4" href="{{path('reserve')}}" >
                     <div>                  
                         <p>  Je réserve mon bien </p>
                     </div>
                 </a>
-                 <a class="boite" id="b5" href="{{path('recup')}}" >
+                 <a  id="b5" href="{{path('recup')}}" >
                     <div>                  
                         <p>  Je récupère mes clés </p>
                     </div>
                 </a>
                             
             </div>
-
-    
-
-       
-
    
 {% endblock %}
