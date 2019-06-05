@@ -4,22 +4,17 @@
     <h1> Confirmation d'inscription </h1>
 {% endblock %}
 
-{% block my_javascripts %}
-    {% javascripts
-        '@FooBarBundle/Resources/public/js/confirm.js'
+{# 
+    {% block javascripts %}
+    
+        function confirm() { 
+            {{path('app_login')}}
+         }
 
-        filter='?uglifyjs2'
-    %}
-    <script src="{{ asset_url }}" type="text/javascript"></script>
-    {% endjavascripts %}
-{% endblock %}
+        setTimeout(confirm, 5000); 
+     #}
+    {% endblock %}
 
  
 
-
-        <!-- function confirm() { -->
-            <!-- {#  {{path('app_login')}} -->
-        <!-- } -->
-
-        <!-- setTimeout( confirm(), 2000);  -->
 
