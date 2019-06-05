@@ -8,19 +8,19 @@
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
-
+            <h1 id="ce">Connexion</h1><br/>
+            <a href="{{path('home2')}}" class="btn btn-lg btn-warning">Retour</a><br/><br/>
             <form action="{{ path('app_login') }}" method="post">
-                <h1 id="ce">Connexion</h1><br/><br/>
-
+                
                 <div class="form-group">
                     <label > Email</label>
                     <input type="email"  name="_username" id="inputEmail" class="form-control" placeholder=" Saisissez votre adresse email ..." required autofocus>
-                </div><br/>
+                </div>
 
                 <div class="form-group">
                     <label >Mot de passe</label>
                     <input type="password" name="_password" id="inputPassword" class="form-control" placeholder="Saisissez votre mot de passe ..." required>
-                </div><br/>
+                </div>
 
                 <div class="form-group">
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
@@ -32,7 +32,7 @@
 
                     <div class="checkbox mb-3">
                         <label><input type="checkbox" name="_remember_me"> Se souvenir de moi</label>
-                    </div><br/><br/>
+                    </div>
             
                 <button class="btn btn-lg btn-primary" type="submit">Connexion</button>
             </form>
