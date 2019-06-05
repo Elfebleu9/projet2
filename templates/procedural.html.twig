@@ -11,7 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="../Img/favicon 31 x 26 b.png" type="image/png" sizes="16x16">
         <link rel="manifest" href="/manifest.json">
-        <meta name="theme-color" content="#ffffff">
 		<link rel="stylesheet" href="style2.css" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	
@@ -48,8 +47,12 @@
 				{% endblock %}
 		
 			</header>
-			
 			<br/><br/><br/><br/><br/><br/>
+			{% if app.user %}
+			<h1><p id="ce"> Bienvenue  {{app.user.username}} sur le site " Quoi de 9 ? "! </p></h1>
+			{% else %}
+			{% endif %}
+			<br/><br/><br/>
 			
 			<h2><p id="ce"><strong> Passer du rêve à la réalité pour acquérir un bien n'est pas une chose aisée.</strong></p></h2>
 
