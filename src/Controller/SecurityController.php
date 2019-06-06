@@ -36,7 +36,7 @@ class SecurityController extends AbstractController
 
            
 
-            return $this->redirectToRoute('confirmation');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('security/registration.html.twig',[
