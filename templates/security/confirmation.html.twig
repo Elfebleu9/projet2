@@ -1,19 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1> Confirmation d'inscription </h1>
+    <h1 id="ce"> Confirmation d'inscription </h1>
 {% endblock %}
+
+       
 
 
     {% block javascripts %}
 
-        {# // <script> 
-        //         function confirm(){
-        //             {{path('app_login')}}
-        //         }
-        //         setTimeout(confirm, 3000);
-        // </script>
-         #}
+         <script> 
+               function confirm(){
+                    {{path('app_login')}}
+               } 
+               window.setTimeout(string confirm, integer 3000);
+         </script>
+         
         
     
     {% endblock %}
