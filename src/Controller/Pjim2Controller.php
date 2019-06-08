@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Form\CommentType;
@@ -146,23 +147,7 @@ class Pjim2Controller extends AbstractController
         ]);
     }
 
-     /**
-     * @Route("/commentaires", name="comsit")
-     */
-    public function commentsite(){
-
-        try{ 
-            $connexion=new PDO("mysql:host=localhost;dbname=pjim2","root","");
-              array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND 
-                      => 'SET NAMES utf8');	  
-         } 
-         catch(PDOException $e){ 
-            echo 'Echec de la connexion:'.$e->getMessage(); 
-         } 
-
-        return $this->render('pjim2/commsite.html.twig');
-    }
-
+    
     
     
 }
