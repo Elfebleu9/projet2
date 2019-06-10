@@ -58,14 +58,22 @@ class Pjim1Controller extends AbstractController
          catch(PDOException $e){ 
             echo 'Echec de la connexion:'.$e->getMessage(); 
          } 
+         
 
-         $select=$connexion->prepare('SELECT * FROM commentaires');
-         $select->execute();
-         $allcomments=$select->fetchAll();
+         $select=$connexion->query('SELECT * FROM commentaires');
+        // $select->execute();
+        // $comments=$select->fetchAll();
 
-      
+        // var_dump($comments);
 
+        while ($donnees = $select->fetch())
 
+        var_dump($donnees);
+        {
+           echo  $donnees['auteur'] . ' / ' . $donnees['date'] . ' <br/> ' ; 
+           
+        }
+        $select->closeCursor();
 
         return $this->render('pjim1/commshwpost.html.twig');
     }
