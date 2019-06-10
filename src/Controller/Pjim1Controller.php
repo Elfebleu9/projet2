@@ -60,17 +60,17 @@ class Pjim1Controller extends AbstractController
          } 
          
 
-         $select=$connexion->query('SELECT * FROM commentaires');
-        // $select->execute();
-        // $comments=$select->fetchAll();
-
-        // var_dump($comments);
+         $select=$connexion->query('SELECT * FROM commentaires');       
 
         while ($donnees = $select->fetch())
 
-        var_dump($donnees);
-        {
-           echo  $donnees['auteur'] . ' / ' . $donnees['date'] . ' <br/> ' ; 
+        { ?>
+           <p>Laissé par <?php echo $donnees['auteur'];?> le <?php echo $donnees['date'];?></p>
+           
+           <article><?php
+
+             echo  $donnees['contenu'] ; ?><br/>
+           </article><?php
            
         }
         $select->closeCursor();

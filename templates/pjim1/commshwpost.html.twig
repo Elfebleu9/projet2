@@ -1,11 +1,27 @@
 {% extends 'base3.html.twig' %}
 
+
 {% block body%}
+         {# {% dump(select) %} #}
 
         <h1 id="ce"> Commentaires</h1><br/>
         <div class="container">
              <div class="bodyshow">
-                
+                 
+
+                         
+                        <p>Laissé par $donnees['auteur'] le $donnees['date']</p>
+                        
+                        <article>
+
+                          $donnees['contenu']<br/>
+                        </article>
+                        
+                  
+
+       
+    
+   
                
             </div>   
         </div>      
