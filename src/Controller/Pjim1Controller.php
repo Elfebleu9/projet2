@@ -34,7 +34,40 @@ class Pjim1Controller extends AbstractController
             echo 'Echec de la connexion:'.$e->getMessage(); 
          } 
 
+         @$auteur=$_POST['auteur'];
+         @$contenu=$_POST['contenu'];
+
+         $insertion=$connexion->prepare('INSERT INTO commentaires (auteur,contenu) VALUES(?,?)');
+
+         $insertion->execute(array($auteur,$contenu));
+
         return $this->render('pjim1/commsite.html.twig');
+    }
+   
+
+    /**
+     * @Route("/pjim1/shposts", name="shwcomm")
+     */
+    public function showcomm(){
+
+        try{ 
+            $connexion=new PDO("mysql:host=localhost;dbname=pjim1","root","");
+              array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND 
+                      => 'SET NAMES utf8');	  
+         } 
+         catch(PDOException $e){ 
+            echo 'Echec de la connexion:'.$e->getMessage(); 
+         } 
+
+         $select=$connexion->prepare('SELECT * FROM commentaires');
+         $select->execute();
+         $allcomments=$select->fetchAll();
+
+      
+
+
+
+        return $this->render('pjim1/commshwpost.html.twig');
     }
 
 }

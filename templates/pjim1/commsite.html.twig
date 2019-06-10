@@ -1,7 +1,25 @@
 {% extends 'base3.html.twig' %}
 
 {% block body%}
-        <h1 id="ce"> Poster un commentaire </h1>
+       <h1 id="ce"> Je laisse un commentaire </h1><br/>
+       
+        <div class="container">
+            <form action="" method="post">
+                <label style="font-size: 20px; fony-weight: bold; text-decoration:underline">Votre commentaire : </label>
+                    <p> 
+                        <label> Pseudo : </label>                   
+                        <input class="form-control" id="comm" type="text" name="auteur" placeholder="saisissez votre pseudo ...">
+                    </p><br/>
+                    <p> 
+                         <label> Contenu : </label>                   
+                        <input class="form-control" id="comm" type="textarea" name="contenu" placeholder="saisissez votre commentaire ..." >
+                    </p><br/>
+                    <p><input type="submit" class="btn btn-success"  value="Commenter"></p>
+
+
+
+            </form> 
+        </div>      
 
 
                
