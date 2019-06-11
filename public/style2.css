@@ -298,7 +298,10 @@ li:hover .button{
 }
 
 #footer{
-    margin-top:50px;    
+    z-index: 2;
+    margin-top:50px;
+
+       
 }
 
 .infos{

@@ -30,20 +30,27 @@ class Pjim1Controller extends AbstractController
               array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND 
                       => 'SET NAMES utf8');	  
          } 
-         catch(PDOException $e){ 
-            echo 'Echec de la connexion:'.$e->getMessage(); 
-         } 
-
-         @$auteur=$_POST['auteur'];
-         @$contenu=$_POST['contenu'];
-
-         $insertion=$connexion->prepare('INSERT INTO commentaires (auteur,contenu) VALUES(?,?)');
-
-         $insertion->execute(array($auteur,$contenu));
+            catch(PDOException $e){ 
+                echo 'Echec de la connexion:'.$e->getMessage(); 
+                die();
+            } 
+    
+            @$auteur=$_POST['auteur'];
+            @$contenu=$_POST['contenu'];
+    
+            $insertion=$connexion->prepare('INSERT INTO commentaires (auteur,contenu) VALUES(?,?)');
+    
+            $insertion->execute(array($auteur,$contenu));
+    
+            
+     
 
         return $this->render('pjim1/commsite.html.twig');
+        
+
     }
-   
+            
+
 
     /**
      * @Route("/pjim1/shposts", name="shwcomm")
@@ -62,18 +69,8 @@ class Pjim1Controller extends AbstractController
 
          $select=$connexion->query('SELECT * FROM commentaires');       
 
-        while ($donnees = $select->fetch())
-
-        { ?>
-           <p>Laissé par <?php echo $donnees['auteur'];?> le <?php echo $donnees['date'];?></p>
-           
-           <article><?php
-
-             echo  $donnees['contenu'] ; ?><br/>
-           </article><?php
-           
-        }
-        $select->closeCursor();
+         var_dump($select);
+        
 
         return $this->render('pjim1/commshwpost.html.twig');
     }
