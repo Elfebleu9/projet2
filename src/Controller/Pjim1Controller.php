@@ -5,6 +5,8 @@ namespace App\Controller;
 
 use PDO;
 use PDOException;
+use App\Entity\Commcl;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -24,34 +26,29 @@ class Pjim1Controller extends AbstractController
      * @Route("/pjim1/posts", name="comsit")
      */
     public function commentsite(){
-
         try{ 
             $connexion=new PDO("mysql:host=localhost;dbname=pjim1","root","");
               array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND 
                       => 'SET NAMES utf8');	  
          } 
-            catch(PDOException $e){ 
-                echo 'Echec de la connexion:'.$e->getMessage(); 
-                die();
-            } 
-    
-            @$auteur=$_POST['auteur'];
-            @$contenu=$_POST['contenu'];
-    
-            $insertion=$connexion->prepare('INSERT INTO commentaires (auteur,contenu) VALUES(?,?)');
-    
-            $insertion->execute(array($auteur,$contenu));
-    
-            
-     
+         catch(PDOException $e){ 
+            echo 'Echec de la connexion:'.$e->getMessage(); 
+         } 
+      
 
+        $auteur=$_POST['auteur'];
+        $contenu=$_POST['contenu'];
+        var_dump($contenu);
+        $insertion=$connexion->prepare('INSERT INTO postspj1 (auteur,contenu) VALUES(?,?)');
+
+        $insertion->execute(array($auteur,$contenu));
+       
+      
         return $this->render('pjim1/commsite.html.twig');
         
 
     }
             
-
-
     /**
      * @Route("/pjim1/shposts", name="shwcomm")
      */
@@ -67,11 +64,9 @@ class Pjim1Controller extends AbstractController
          } 
          
 
-         $select=$connexion->query('SELECT * FROM commentaires');       
+         $select=$connexion->prepare('SELECT * FROM postspj1');       
 
-         var_dump($select);
         
-
         return $this->render('pjim1/commshwpost.html.twig');
     }
 

@@ -5,18 +5,18 @@ namespace App\Entity;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommclRepository")
  */
-class Commcl
+class commcl
 {
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Auteur;
+    private $auteur;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Contenu;
+    private $contenu;
 
     /**
      * @ORM\Column(type="datetime")
@@ -30,24 +30,24 @@ class Commcl
 
     public function getAuteur(): ?string
     {
-        return $this->Auteur;
+        return $this->auteur;
     }
 
-    public function setAuteur(string $Auteur): self
+    public function setAuteur(string $auteur): self
     {
-        $this->Auteur = $Auteur;
+        $this->auteur = $auteur;
 
         return $this;
     }
 
     public function getContenu(): ?string
     {
-        return $this->Contenu;
+        return $this->contenu;
     }
 
-    public function setContenu(string $Contenu): self
+    public function setContenu(string $contenu): self
     {
-        $this->Contenu = $Contenu;
+        $this->contenu = $contenu;
 
         return $this;
     }
@@ -63,6 +63,13 @@ class Commcl
 
         return $this;
     }
+    public function commconnex (){
+
+           
+
+            return $this->render('pjim1/commsite.html.twig'); 
+
+        }
 
    
        
