@@ -119,32 +119,23 @@ class Pjim1Controller extends AbstractController
          catch(PDOException $e){ 
             echo 'Echec de la connexion:'.$e->getMessage(); 
          } 
-         if(isset($connexion)){
-             echo 'vous êtes connecté';
-         }
-        //  $select= new Commcl();
-         $select=$connexion->prepare('SELECT * FROM postspj1'); 
-         if($select!==null){
-             echo 'select contient des éléments';
-         }
-         $donnees = $select->fetchAll();
-         if($donnees!==null){
-            echo 'donnees contient des éléments';
-        }
-          var_dump($donnees);
-         $auteur=$this->getAuteur($donnees);
-         $contenu=$this->getContenu($donnees);
-         $date=$this->getCreatedAt($donnees);
          
+        //  $select= new Commcl();
+         $select=$connexion->query('SELECT * FROM postspj1'); 
         
-        {if(!empty($donnees)){
+         while($donnees = $select->fetch()){
+               
+                    
+                if(!empty($donnees)){
 
-            echo 'Laissé par '. $auteur . 'le' . $date . ':'
-            
-            .$contenu ;
-         }                                                          
-        }
+                    echo 'Laissé par '. $donnees['auteur'] . 'le' .$donnees['date'] . ':'
+                    
+                    .$donnees['contenu'] ;
+                }                                                          
+            }
         $select->closeCursor();
+
+       
          
         return $this->render('pjim1/commshwpost.html.twig');
     }
