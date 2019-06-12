@@ -65,9 +65,11 @@ class commcl
     }
     public function commconnex (){
 
+            
+
            
 
-            return $this->render('pjim1/commsite.html.twig'); 
+            return $this->render('pjim1/commshwpost.html.twig'); 
 
         }
 

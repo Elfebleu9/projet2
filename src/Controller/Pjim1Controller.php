@@ -11,7 +11,65 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class Pjim1Controller extends AbstractController
-{
+{ 
+
+
+     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $auteur;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $contenu;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getAuteur(): ?string
+    {
+        return $this->auteur;
+    }
+
+    public function setAuteur(string $auteur): self
+    {
+        $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    public function getContenu(): ?string
+    {
+        return $this->contenu;
+    }
+
+    public function setContenu(string $contenu): self
+    {
+        $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
     /**
      * @Route("/pjim1", name="pjim1")
      */
@@ -36,9 +94,9 @@ class Pjim1Controller extends AbstractController
          } 
       
 
-        $auteur=$_POST['auteur'];
-        $contenu=$_POST['contenu'];
-        var_dump($contenu);
+        @$auteur=$_POST['auteur'];
+        @$contenu=$_POST['contenu'];
+       
         $insertion=$connexion->prepare('INSERT INTO postspj1 (auteur,contenu) VALUES(?,?)');
 
         $insertion->execute(array($auteur,$contenu));
@@ -64,9 +122,26 @@ class Pjim1Controller extends AbstractController
          } 
          
 
-         $select=$connexion->prepare('SELECT * FROM postspj1');       
+         $select=$connexion->prepare('SELECT * FROM commentaires');       
+         
+        while ($donnees = $select->fetchAll())
+        var_dump($donnees);
+        {if(!empty($select)){
 
-        
+            echo 'Laissé par '. $donnees['auteur'] . 'le' . $donnees['date'];
+         }
+        }
+        $select->closeCursor();
+         
+
+        //  $select=$connexion->prepare('SELECT * FROM postspj1');       
+
+        //  var_dump($select);
+
+        //  if(!empty($select)){
+
+        //     echo 'Laissé par'. $select['auteur'] . 'le' . $select['date'];
+        //  }
         return $this->render('pjim1/commshwpost.html.twig');
     }
 
