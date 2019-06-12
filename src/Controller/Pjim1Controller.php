@@ -6,7 +6,6 @@ namespace App\Controller;
 use PDO;
 use PDOException;
 use App\Entity\Commcl;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -120,28 +119,33 @@ class Pjim1Controller extends AbstractController
          catch(PDOException $e){ 
             echo 'Echec de la connexion:'.$e->getMessage(); 
          } 
-         
-
-         $select=$connexion->prepare('SELECT * FROM commentaires');       
-         
-        while ($donnees = $select->fetchAll())
-        var_dump($donnees);
-        {if(!empty($select)){
-
-            echo 'Laissé par '. $donnees['auteur'] . 'le' . $donnees['date'];
+         if(isset($connexion)){
+             echo 'vous êtes connecté';
          }
+        //  $select= new Commcl();
+         $select=$connexion->prepare('SELECT * FROM postspj1'); 
+         if($select!==null){
+             echo 'select contient des éléments';
+         }
+         $donnees = $select->fetchAll();
+         if($donnees!==null){
+            echo 'donnees contient des éléments';
+        }
+          var_dump($donnees);
+         $auteur=$this->getAuteur($donnees);
+         $contenu=$this->getContenu($donnees);
+         $date=$this->getCreatedAt($donnees);
+         
+        
+        {if(!empty($donnees)){
+
+            echo 'Laissé par '. $auteur . 'le' . $date . ':'
+            
+            .$contenu ;
+         }                                                          
         }
         $select->closeCursor();
          
-
-        //  $select=$connexion->prepare('SELECT * FROM postspj1');       
-
-        //  var_dump($select);
-
-        //  if(!empty($select)){
-
-        //     echo 'Laissé par'. $select['auteur'] . 'le' . $select['date'];
-        //  }
         return $this->render('pjim1/commshwpost.html.twig');
     }
 

@@ -5,7 +5,7 @@ namespace App\Entity;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommclRepository")
  */
-class commcl
+class Commcl
 {
 
     /**
