@@ -15,3 +15,8 @@ body{
     text-align: center;       
 }
 
+#footer{
+    position:fixed;
+    border: 2px red solid;
+}
+

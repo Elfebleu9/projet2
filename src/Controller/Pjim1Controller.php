@@ -90,20 +90,17 @@ class Pjim1Controller extends AbstractController
          } 
          catch(PDOException $e){ 
             echo 'Echec de la connexion:'.$e->getMessage(); 
-         } 
+         }
+         
       
 
         @$auteur=$_POST['auteur'];
         @$contenu=$_POST['contenu'];
        
         $insertion=$connexion->prepare('INSERT INTO postspj1 (auteur,contenu) VALUES(?,?)');
-
         $insertion->execute(array($auteur,$contenu));
-       
-      
-        return $this->render('pjim1/commsite.html.twig');
         
-
+        return $this->render('pjim1/commsite.html.twig');
     }
             
     /**
@@ -111,33 +108,24 @@ class Pjim1Controller extends AbstractController
      */
     public function showcomm(){
 
-        try{ 
-            $connexion=new PDO("mysql:host=localhost;dbname=pjim1","root","");
-              array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND 
-                      => 'SET NAMES utf8');	  
-         } 
-         catch(PDOException $e){ 
-            echo 'Echec de la connexion:'.$e->getMessage(); 
-         } 
-         
-        //  $select= new Commcl();
-         $select=$connexion->query('SELECT * FROM postspj1'); 
-        
-         while($donnees = $select->fetch()){
-               
-                    
-                if(!empty($donnees)){
-
-                    echo 'Laissé par '. $donnees['auteur'] . 'le' .$donnees['date'] . ':'
-                    
-                    .$donnees['contenu'] ;
-                }                                                          
-            }
-        $select->closeCursor();
-
-       
-         
-        return $this->render('pjim1/commshwpost.html.twig');
+            try{ 
+                $connexion=new PDO("mysql:host=localhost;dbname=pjim1","root","");
+                array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND 
+                        => 'SET NAMES utf8');	  
+            } 
+            catch(PDOException $e){ 
+                echo 'Echec de la connexion:'.$e->getMessage(); 
+            } 
+            
+            //  $select= new Commcl();
+            $select=$connexion->prepare('SELECT * FROM postspj1'); 
+            $select->execute();
+            $donnees=$select->fetchAll();
+            // echo "<pre>";
+            // print_r($donnees);
+            // echo "<pre>";
+      
+       return $this->render('pjim1/commshwpost.html.twig',[$donnees]);
     }
 
 }

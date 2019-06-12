@@ -2,7 +2,7 @@
 
 
 {% block body%}
-         {# {% dump(select) %} #}
+        
 
         <h1 id="ce"> Commentaires</h1><br/>
         <div class="container">
@@ -12,12 +12,17 @@
                      
 
                         <div class="comment">
+
+                               {# {{dump(donnees.ResponsesQues)}} #}
+
                             <div class="row">
                                 <div class="col-3">
-                                            
+                                    
+                                        echo $donnees['auteur'] ?>  
+                                                                      
                                 </div>                            
                                 <div class="col">
-                                          $donnees['auteur']                
+                                          
                                 </div>
                             </div>
                         
