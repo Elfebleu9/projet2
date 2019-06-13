@@ -117,11 +117,20 @@ class Pjim1Controller extends AbstractController
             catch(PDOException $e){ 
                 echo 'Echec de la connexion:'.$e->getMessage(); 
             } 
+
+           
             
-            //  $select= new Commcl();
+            $select= new Commcl();
             $select=$connexion->prepare('SELECT * FROM postspj1'); 
             $select->execute();
             $donnees=$select->fetchAll();
+
+            var_dump($donnees);
+            foreach ($donnees as $donnee):
+
+            echo 'bonjour'.'  '.$donnee['auteur'];
+            
+            endforeach;
             
             // echo "<pre>";
             // print_r($donnees);

@@ -63,15 +63,13 @@ class Commcl
 
         return $this;
     }
-    public function commconnex (){
+    // public function commconnex (){
 
-            
+       
 
-           
+    //     return $this->render('pjim1/commshwpost.html.twig'); 
 
-            return $this->render('pjim1/commshwpost.html.twig'); 
-
-        }
+    //     }
 
    
        

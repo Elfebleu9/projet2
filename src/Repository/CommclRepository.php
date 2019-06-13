@@ -20,7 +20,7 @@ class CommclRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Commentaire[] Returns an array of Commentaire objects
+    //  * @return Commcl[] Returns an array of Commcl objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class CommclRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Commentaire
+    public function findOneBySomeField($value): ?Commcl
     {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')
