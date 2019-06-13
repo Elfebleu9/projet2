@@ -1,7 +1,11 @@
 {% extends 'base3.html.twig' %}
-
+{% block head %}
+        {# <use Symfony\Bridge\Twig\TokenParser\DumpTokenParser;>
+        <require_once __DIR__ . '/vendor/autoload.php';> #}
+{% endblock %}
 {% block body%}
-        
+
+       
 
         <h1 id="ce"> Commentaires</h1><br/>
         <div class="container">
@@ -11,18 +15,15 @@
                      
 
                         <div class="comment">
-                                {# {{[id]}} #}
-                               {# {{dump(donnees.ResponsesQues)}} #}
-
+                               
                             <div class="row">
-                                <div class="col-3">
-                                    
-                                        echo $donnees['auteur'] ?>  
+                                <div ">
+                                    {# {{ dump($donnees['auteur'])}} #}
+                                       < echo $donnees['auteur'] ?>
+
                                                                       
                                 </div>                            
-                                <div class="col">
-                                          
-                                </div>
+                                
                             </div>
                         
                         </div>

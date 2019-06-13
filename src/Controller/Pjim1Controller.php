@@ -9,6 +9,7 @@ use App\Entity\Commcl;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class Pjim1Controller extends AbstractController
 { 
 
@@ -125,8 +126,24 @@ class Pjim1Controller extends AbstractController
             // echo "<pre>";
             // print_r($donnees);
             // echo "<pre>";
+
+            // <?php
+            //     require_once __DIR__ . '/vendor/autoload.php'; // Autoload files using Composer autoload
+
+            //     function get_halt_data() {
+            //         return file_get_contents(__FILE__, false, null, __COMPILER_HALT_OFFSET__);
+            //     }
+
+            //     $loader = new Twig_Loader_Array(array(
+            //         'index' => get_halt_data()));
+            //     $twig = new Twig_Environment($loader);
+
+            //     echo $twig->render('index', array('name' => 'Fabien'));
+
+            //     __halt_compiler();
+
             
-       return $this->render('pjim1/commshwpost.html.twig',[$donnees]);
+       return $this->render('pjim1/commshwpost.html.twig',['donnees'=>$donnees]);
     }
 
 }
