@@ -121,10 +121,11 @@ class Pjim1Controller extends AbstractController
             $select=$connexion->prepare('SELECT * FROM postspj1'); 
             $select->execute();
             $donnees=$select->fetchAll();
+            
             // echo "<pre>";
             // print_r($donnees);
             // echo "<pre>";
-      
+            
        return $this->render('pjim1/commshwpost.html.twig',[$donnees]);
     }
 
