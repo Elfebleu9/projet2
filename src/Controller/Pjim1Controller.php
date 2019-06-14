@@ -10,6 +10,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+
+
+
+
 class Pjim1Controller extends AbstractController
 { 
 
@@ -125,7 +129,7 @@ class Pjim1Controller extends AbstractController
             $select->execute();
             $donnees=$select->fetchAll();
 
-            var_dump($donnees);
+            // var_dump($donnees);
             foreach ($donnees as $donnee):
 
             echo 'bonjour'.'  '.$donnee['auteur'];
@@ -144,10 +148,10 @@ class Pjim1Controller extends AbstractController
             //     }
 
             //     $loader = new Twig_Loader_Array(array(
-            //         'index' => get_halt_data()));
+            //         'commshwpost.html.twig' => get_halt_data()));
             //     $twig = new Twig_Environment($loader);
 
-            //     echo $twig->render('index', array('name' => 'Fabien'));
+            //     echo $twig->render('commshwpost.html.twig', array(['donnees'=>$donnees]));
 
             //     __halt_compiler();
 
