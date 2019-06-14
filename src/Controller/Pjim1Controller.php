@@ -129,13 +129,15 @@ class Pjim1Controller extends AbstractController
             $select->execute();
             $donnees=$select->fetchAll();
 
-            // var_dump($donnees);
+            /*
+            var_dump($donnees);
             foreach ($donnees as $donnee):
 
             echo 'bonjour'.'  '.$donnee['auteur'];
             
-            endforeach;
+            endforeach;*/
             
+
             // echo "<pre>";
             // print_r($donnees);
             // echo "<pre>";
@@ -143,20 +145,28 @@ class Pjim1Controller extends AbstractController
             // <?php
             //     require_once __DIR__ . '/vendor/autoload.php'; // Autoload files using Composer autoload
 
-            //     function get_halt_data() {
-            //         return file_get_contents(__FILE__, false, null, __COMPILER_HALT_OFFSET__);
-            //     }
+                // function get_halt_data() {
+                //     return file_get_contents(__FILE__, false, null, __COMPILER_HALT_OFFSET__);
+                // }
 
+<<<<<<< HEAD
             //     $loader = new Twig_Loader_Array(array(
             //         'commshwpost.html.twig' => get_halt_data()));
             //     $twig = new Twig_Environment($loader);
 
             //     echo $twig->render('commshwpost.html.twig', array(['donnees'=>$donnees]));
+=======
+                // $loader = new Twig_Loader_Array(array(
+                //     'commshwpost.html.twig' => get_halt_data()));
+                // $twig = new Twig_Environment($loader);
+
+                // echo $twig->render('commshwpost.html', array('donnees' => $donnees));
+>>>>>>> 1791007fdff54f6f85165faca427e0f48274521e
 
             //     __halt_compiler();
 
-            
-       return $this->render('pjim1/commshwpost.html.twig',['donnees'=>$donnees]);
+          
+       return $this->render('commshwpost.php',['donnees'=>$donnees]);
     }
 
 }
