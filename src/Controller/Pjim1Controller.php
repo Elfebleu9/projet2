@@ -125,13 +125,15 @@ class Pjim1Controller extends AbstractController
             $select->execute();
             $donnees=$select->fetchAll();
 
+            /*
             var_dump($donnees);
             foreach ($donnees as $donnee):
 
             echo 'bonjour'.'  '.$donnee['auteur'];
             
-            endforeach;
+            endforeach;*/
             
+
             // echo "<pre>";
             // print_r($donnees);
             // echo "<pre>";
@@ -151,7 +153,7 @@ class Pjim1Controller extends AbstractController
 
             //     __halt_compiler();
 
-            
+          
        return $this->render('pjim1/commshwpost.html.twig',['donnees'=>$donnees]);
     }
 
