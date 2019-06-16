@@ -22,37 +22,20 @@
         <div class="container">
              <div class="bodyshow">
                                 Je ne veux pas fonctionner.
-            <?php 
-            
-                $connexion=new PDO("mysql:host=localhost;dbname=pjim1","root","");
-                array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND 
-                        => 'SET NAMES utf8');	  
-         
-            if(isset($connexion)){
-                echo 'Vous êtes connecté';
-            }
-            // catch(PDOException $e){ 
-            //     echo 'Echec de la connexion:'.$e->getMessage(); 
-            // } 
-
-           
-            $select= new Commcl();
-            $select=$connexion->prepare('SELECT * FROM postspj1'); 
-            $select->execute();
-            $donnees=$select->fetchAll(); ?>
+          
 
                      
 
                         <div class="comment">
                             <div class="row">
                                 <div>                      
-                                    <?php foreach ($donnees as $donnee):
+                                    <? foreach ($donnees as $donnee):
 
                                         echo 'bonjour'.'  '.$donnee['auteur'];
 
-                                        endforeach;
+                                        endforeach; ?>
                                                                        
-                                    ?>
+                                   
                                                                       
                                 </div>                            
                                 
@@ -70,5 +53,3 @@
         </div>      
 
     </body>
-
-?>

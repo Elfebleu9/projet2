@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Quoi de 9 ?{% endblock %}</title>
+        <link rel="icon" href="../Img/favicon 31 x 26 b.png" type="image/png" sizes="16x16">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+        <link rel="stylesheet" href="style2.css" type="text/css">
+        {% block stylesheets %}
+           {{encore_entry_link_tags('app')}}
+        
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a href="{{ path('home')}}"><img src="../Img/logoT.png" alt="photo"></a>
+            <a class="navbar-brand"></a>
+            <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarColor01" aria-label="Toggle navigation" type="button" data-target="#navbarColor01" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+
+
+                    {% if not app.user %}                  <!-- switch nav bar connexion -->
+                        <div id="plnav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('security_registration')}}" style="font-size:25px"><strong>Inscription</strong></a>
+                            </li>
+                        
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('shwcomm')}}" style="font-size:25px"><strong>Vos avis</strong></a>
+
+                            </li>
+                        </div>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('app_login')}}" style="font-size:25px"><strong>Connexion</strong></a>
+
+                        </li>
+
+                    {% else %}
+
+                        <div id="plnav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('home1')}}" style="font-size:25px"><strong>Accueil</strong></a>
+                                    
+                                    
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{path('shwcomm')}}" style="font-size:25px"><strong>Vos avis</strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('comsit')}}" style="font-size:25px"><strong>Laisser un avis</strong></a>
+                            </li>
+
+                        </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('security_logout')}}" style="font-size:25px"><strong>Déconnexion</strong></a>
+
+                            </li>
+                        
+                            
+                    {% endif %}
+                    
+                </ul>
+                
+            </div>
+        </nav> 
+
+
+                <br/><br/>
+
+       
+
+            {% block body %}{% endblock %}
+
+          <footer>
+				<div id="footer">
+					
+					<div class="infos">
+						<div id="Lien">
+							<p>Contact :</p>
+							<p>N° tel : 01.02.03.04.05</p>
+							<p><a href="../Mentions légales.html" target="_blank" style="text-decoration:none">Mentions légales</a></p>
+							<p><a href="../Politiques.html" target="_blank" style="text-decoration:none">Politiques de confidentialité</a></p>
+						</div>
+						<div id="App">
+							<p> Nos applications : </p>
+							<a href=" " target="_blank"> <img src="../Img/Icone4.png" alt="And"></a>&nbsp&nbsp
+							<a href=" "target="_blank"> <img src="../Img/Icone5.png" alt="IPh"></a>						
+
+						</div>
+
+						<div id="Icon">
+							<p> Réseaux sociaux : </p>
+							<a href="http://facebook.fr" target="_blank"> <img src="../Img/Icone1.jpg" alt="Fb"></a>&nbsp&nbsp
+							<a href="http://twitter.com" target="_blank"> <img src="../Img/Icone2.jpg" alt="Twit"></a>&nbsp&nbsp
+							<a href="http://whatsapp.com" target="_blank"> <img src="../Img/Icone3.png" alt="WhAp"></a>
+						</div>		
+					</div>
+					
+				</div>
+	
+			</footer>  
+        
+        {% block javascripts %}
+            {{encore_entry_script_tags('app')}}
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+           
+        {% endblock %}
+    </body>
+</html>
