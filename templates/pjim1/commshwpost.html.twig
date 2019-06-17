@@ -18,13 +18,14 @@
                                
                             <div class="row">
                                 <div >
-                                    {# {% block content %}
+                                    {% block content %}
                                         {% for donnee in donnees %}
 
-                                            <p> <pre>Laissé par {{donnee.auteur}} le {{donnee.date| date('d/m/Y à H:i')}}</pre></p>
+                                            <p> <pre>Laissé par {{donnee.auteur}} le {{donnee.date| date('d/m/Y à H:i')}} <br/>
+                                            {{donnee.contenu}}</pre></p>
                                         
                                         {% endfor %}
-                                    {% endblock %}                      #}
+                                    {% endblock %}                     
                                 </div>                            
                                 
                             </div>

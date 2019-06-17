@@ -131,10 +131,10 @@ class Pjim1Controller extends AbstractController
             $select->execute();
             $donnees=$select->fetchAll();
 
-            $loader = new \Twig\Loader\FilesystemLoader('pjim1\commshwpost.html','templates');
-            $twig = new \Twig\Environment($loader);
+            // $loader = new \Twig\Loader\FilesystemLoader('pjim1\commshwpost.html','templates');
+            // $twig = new \Twig\Environment($loader);
 
-            echo $twig->render('commshwpost.html', ['donnees' => $donnees]);
+            // echo $twig->render('commshwpost.html', ['donnees' => $donnees]);
             
             // var_dump($donnees);
             // foreach($donnees as $donnee):
@@ -183,7 +183,7 @@ class Pjim1Controller extends AbstractController
                
                 
 
-                 echo $twig->render('pjim1\commshwpost.html.twig',array('donnee'));
+                //  echo $twig->render('pjim1\commshwpost.html.twig',array('donnee'));
 
                 
                  return $this->render('pjim1\commshwpost.html.twig',array('donnees'=>[$donnees]));
