@@ -152,23 +152,26 @@ class Pjim1Controller extends AbstractController
                
                
             
-                    foreach ($donnees as $donnee):
 
-                    echo 'Laissé par :'.'  '.$donnee['auteur']. '  le ' . $donnee['date'] . ' <br/> ' . $donnee['contenu'] . '<br/><br/>'
-                     ;
-                    
-                    endforeach;
+                $loader1 = new Arrayloader(array('pjim1\commshwpost.html.twig' => 'base4.html.twig'));
+                $loader2 = new Arrayloader(array('pjim1\commshwpost.html.twig' =>
+                '{% block content %}
+                              
+                        {% for (donnee in donnees) %}
 
-                //  $loader2 = new Arrayloader(array('pjim1\commshwpost.html.twig' => '{% extends (base3.html.twig) %}'));
-                // $loader2 = new Arrayloader(array('pjim1\commshwpost.html.twig' =>'{% block content %}Salut {{donnee.auteur}}  !{% endblock %}'));
-                // var_dump($loader2);
-                // //  $loader= new ChainLoader([$loader1,$loader2]);
+                            Laissé par : {{donnee.auteur}}  le {{donnee.date}} <br/> {{donnee.contenu}}<br/><br/>
+                                                       
+                        {% endfor %}
+                             
+                 {% endblock %}'));
+                var_dump($loader2);
+                $loader= new ChainLoader([$loader1,$loader2]);
 
-               // $twig = new Twig_Environment($loader1);
+                $twig = new Twig_Environment($loader);
                
                 
 
-                // echo $twig->render('pjim1\commshwpost.html.twig',array('donnees'=>[$donnees]));
+                // echo $twig->render('pjim1\commshwpost.html.twig',array('donnee'=>[$donnee]));
 
                 
                  return $this->render('pjim1\commshwpost.html.twig',array('donnees'=>[$donnees]));
