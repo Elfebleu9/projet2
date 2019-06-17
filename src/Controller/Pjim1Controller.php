@@ -168,10 +168,10 @@ class Pjim1Controller extends AbstractController
                 $loader= new ChainLoader([$loader1,$loader2]);
 
                 $twig = new Twig_Environment($loader);
-               
+                var_dump($twig);
                 
 
-                // echo $twig->render('pjim1\commshwpost.html.twig',array('donnee'=>[$donnee]));
+                 echo $twig->render('pjim1\commshwpost.html.twig',array('donnee'));
 
                 
                  return $this->render('pjim1\commshwpost.html.twig',array('donnees'=>[$donnees]));
