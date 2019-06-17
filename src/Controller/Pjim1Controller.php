@@ -179,13 +179,8 @@ class Pjim1Controller extends AbstractController
                 // var_dump($loader2);
                 // $loader= new ChainLoader([$loader1,$loader2]);
 
-<<<<<<< HEAD
-                $twig = new Twig_Environment($loader);
-                var_dump($twig);
-=======
                 // $twig = new Twig_Environment($loader);
                
->>>>>>> 589b9f0c7d2320441dccb7fd95d73c6191b3171f
                 
 
                  echo $twig->render('pjim1\commshwpost.html.twig',array('donnee'));
