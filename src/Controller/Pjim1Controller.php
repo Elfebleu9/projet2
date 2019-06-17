@@ -131,17 +131,29 @@ class Pjim1Controller extends AbstractController
             $select->execute();
             $donnees=$select->fetchAll();
 
+            $loader = new \Twig\Loader\FilesystemLoader('pjim1\commshwpost.html','templates');
+            $twig = new \Twig\Environment($loader);
+
+            echo $twig->render('commshwpost.html', ['donnees' => $donnees]);
             
             // var_dump($donnees);
-           
-            
+            // foreach($donnees as $donnee):
 
+            //     echo '<pre>laissé par :' . $donnee['auteur'] .' le ' . $donnee['date'] .' <br/>'. $donnee['contenu'].'</pre>';
+
+            // endforeach;
+            
+            // $loader = new \Twig\Loader\ArrayLoader([
+            //     'pjim1\commshwpost.html' => '{% block content %} Hello {{ name }}!{% endblock %}',
+            // ]);
+            
+           
             // echo "<pre>";
             // print_r($donnees);
             // echo "<pre>";
 
             // <?php
-            //    require_once '/vendor/autoload.php'; // Autoload files using Composer autoload
+            //    require_once 'vendor/twig/lib/Twig/autoload.php'; // Autoload files using Composer autoload
 
                 // function get_halt_data() {
    
@@ -153,22 +165,27 @@ class Pjim1Controller extends AbstractController
                
             
 
-                $loader1 = new Arrayloader(array('pjim1\commshwpost.html.twig' => 'base4.html.twig'));
-                $loader2 = new Arrayloader(array('pjim1\commshwpost.html.twig' =>
-                '{% block content %}
+                // $loader1 = new Arrayloader(array('pjim1\commshwpost.html.twig' => 'base4.html.twig'));
+                // $loader2 = new Arrayloader(array('pjim1\commshwpost.html.twig' =>
+                // '{% block content %}
                               
-                        {% for (donnee in donnees) %}
+                        // {% for (donnee in donnees) %}
 
-                            Laissé par : {{donnee.auteur}}  le {{donnee.date}} <br/> {{donnee.contenu}}<br/><br/>
+                        //     Laissé par : {{donnee.auteur}}  le {{donnee.date}} <br/> {{donnee.contenu}}<br/><br/>
                                                        
-                        {% endfor %}
+                        // {% endfor %}
                              
-                 {% endblock %}'));
-                var_dump($loader2);
-                $loader= new ChainLoader([$loader1,$loader2]);
+                //  {% endblock %}'));
+                // var_dump($loader2);
+                // $loader= new ChainLoader([$loader1,$loader2]);
 
+<<<<<<< HEAD
                 $twig = new Twig_Environment($loader);
                 var_dump($twig);
+=======
+                // $twig = new Twig_Environment($loader);
+               
+>>>>>>> 589b9f0c7d2320441dccb7fd95d73c6191b3171f
                 
 
                  echo $twig->render('pjim1\commshwpost.html.twig',array('donnee'));
@@ -179,9 +196,9 @@ class Pjim1Controller extends AbstractController
                 }
                 
 
-    //              $loader = new \Twig\Loader\ArrayLoader([
-    //                 'pjim1\commshwpost.html.twig' => '{% block content %} Hello {{ name }}!{% endblock %}',
-    //             ]);
+                //  $loader = new \Twig\Loader\ArrayLoader([
+                //     'pjim1\commshwpost.html.twig' => '{% block content %} Hello {{ name }}!{% endblock %}',
+                // ]);
     //             $twig = new \Twig\Environment($loader);
                 
     //             echo $twig->render('pjim1\commshwpost.html.twig', ['name' => 'Fabien']);

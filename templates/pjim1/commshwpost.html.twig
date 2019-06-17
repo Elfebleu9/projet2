@@ -1,4 +1,4 @@
-{# {% extends 'base4.html.twig' %} #}
+{% extends 'base4.html.twig' %}
 
 
           
@@ -18,13 +18,13 @@
                                
                             <div class="row">
                                 <div >
-                                    {% block content %}
-                                        {# {% for donnee in donnees %}
+                                    {# {% block content %}
+                                        {% for donnee in donnees %}
 
-                                            <p> Laissé par {{donnee.auteur}} le {{donnee.date| date('d/m/Y à H:i')}}</p>
+                                            <p> <pre>Laissé par {{donnee.auteur}} le {{donnee.date| date('d/m/Y à H:i')}}</pre></p>
                                         
-                                        {% endfor %} #}
-                                    {% endblock %}                     
+                                        {% endfor %}
+                                    {% endblock %}                      #}
                                 </div>                            
                                 
                             </div>
