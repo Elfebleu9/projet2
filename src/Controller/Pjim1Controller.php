@@ -126,79 +126,15 @@ class Pjim1Controller extends AbstractController
 
            
             
-            // $select= new Commcl();
+           
             $select=$connexion->prepare('SELECT * FROM postspj1'); 
             $select->execute();
             $donnees=$select->fetchAll();
 
-            // $loader = new \Twig\Loader\FilesystemLoader('pjim1\commshwpost.html','templates');
-            // $twig = new \Twig\Environment($loader);
-
-            // echo $twig->render('commshwpost.html', ['donnees' => $donnees]);
-            
-            var_dump($donnees);
-            // foreach($donnees as $donnee):
-
-            //     echo '<pre>laissé par :' . $donnee['auteur'] .' le ' . $donnee['date'] .' <br/>'. $donnee['contenu'].'</pre>';
-
-            // endforeach;
-            
-            // $loader = new \Twig\Loader\ArrayLoader([
-            //     'pjim1\commshwpost.html' => '{% block content %} Hello {{ name }}!{% endblock %}',
-            // ]);
-            
            
-            // echo "<pre>";
-            // print_r($donnees);
-            // echo "<pre>";
 
-            // <?php
-            //    require_once 'vendor/twig/lib/Twig/autoload.php'; // Autoload files using Composer autoload
+            return $this->render('pjim1\commshwpost.html.twig',array('donnees'=>$donnees));
 
-                // function get_halt_data() {
-   
-                //     return file_get_contents(__FILE__, false, null, __COMPILER_HALT_OFFSET__);
-                // }
-                //$twig1 = new TemplateWrapper();
-                
-               
-               
-            
-
-                // $loader1 = new Arrayloader(array('pjim1\commshwpost.html.twig' => 'base4.html.twig'));
-                // $loader2 = new Arrayloader(array('pjim1\commshwpost.html.twig' =>
-                // '{% block content %}
-                              
-                        // {% for (donnee in donnees) %}
-
-                        //     Laissé par : {{donnee.auteur}}  le {{donnee.date}} <br/> {{donnee.contenu}}<br/><br/>
-                                                       
-                        // {% endfor %}
-                             
-                //  {% endblock %}'));
-                // var_dump($loader2);
-                // $loader= new ChainLoader([$loader1,$loader2]);
-
-                // $twig = new Twig_Environment($loader);
-               
-                
-
-                //  echo $twig->render('pjim1\commshwpost.html.twig',array('donnee'));
-
-                
-                 return $this->render('pjim1\commshwpost.html.twig',array('donnees'=>[$donnees]));
-
-                }
-                
-
-                //  $loader = new \Twig\Loader\ArrayLoader([
-                //     'pjim1\commshwpost.html.twig' => '{% block content %} Hello {{ name }}!{% endblock %}',
-                // ]);
-    //             $twig = new \Twig\Environment($loader);
-                
-    //             echo $twig->render('pjim1\commshwpost.html.twig', ['name' => 'Fabien']);
-    //             return $this->render('pjim1\commshwpost.html.twig');
-    // }
-}
-            // __halt_compiler();
-
+        }
+           
+    }

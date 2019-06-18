@@ -8,29 +8,29 @@
   
 
         <h1 id="ce"> Commentaires</h1><br/>
-        <div class="container">
-             <div class="bodyshow">
-                 
-
-                     
-
-                        <div class="comment">
+        <div class="container" >
+             <div class="bodyshow" >
+                
+                        
                                
-                            <div class="row">
+                                <br/><br/>
                                 <div >
-                                    {# {% block content %}
+                                    {# {% block content %} #}
                                         {% for donnee in donnees %}
-
-                                            <p> <pre>Laissé par {{donnee.auteur}} le {{donnee.date| date('d/m/Y à H:i')}} <br/>
-                                            {{donnee.contenu}}</pre></p>
-                                        
+                                            <div class=" bocomm" id="cen" >
+                                                <br/>
+                                                <p> Laissé par <strong>{{donnee.auteur}}</strong>&nbsp&nbsp&nbsp <small>le : {{donnee.date| date('d/m/Y à H:i')}}</small> 
+                                                <br/><br/><br/>
+                                                {{donnee.contenu|raw}}</pre></p>
+                                            </div>
+                                            <br/><br/>
                                         {% endfor %}
-                                    {% endblock %}                      #}
+                                    {# {% endblock %}                      #}
                                 </div>                            
                                 
-                            </div>
+                           
                         
-                        </div>
+                       
                    
                   
 
