@@ -136,7 +136,7 @@ class Pjim1Controller extends AbstractController
 
             // echo $twig->render('commshwpost.html', ['donnees' => $donnees]);
             
-            // var_dump($donnees);
+            var_dump($donnees);
             // foreach($donnees as $donnee):
 
             //     echo '<pre>laissé par :' . $donnee['auteur'] .' le ' . $donnee['date'] .' <br/>'. $donnee['contenu'].'</pre>';
