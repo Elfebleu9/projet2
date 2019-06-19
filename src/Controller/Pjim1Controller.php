@@ -100,8 +100,8 @@ class Pjim1Controller extends AbstractController
          
       
 
-        @$auteur=$_POST['auteur'];
-        @$contenu=$_POST['contenu'];
+        @$auteur=htmlspecialchars($_POST['auteur']);
+        @$contenu=htmlspecialchars($_POST['contenu']);
        
         $insertion=$connexion->prepare('INSERT INTO postspj1 (auteur,contenu) VALUES(?,?)');
         $insertion->execute(array($auteur,$contenu));
