@@ -108,11 +108,28 @@ class User implements UserInterface//,\Serializable
         return null;
     }
 
+/**
+ * @ORM\Column(type="array")
+ */
+private $roles = [];
 
-    public function getRoles()
+
+    public function getRoles(): ?array
     {
-        return array('ROLE_USER');
+        if(empty($this->roles )){
+        return ['ROLE_USER'];
+        }
+        return $this->roles;
     }
+
+    public function setRoles($roles): self
+    {
+
+         $this->roles[] = $roles;
+
+         return $this;
+    }
+
 
     public function eraseCredentials()
     {
