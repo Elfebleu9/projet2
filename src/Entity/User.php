@@ -35,7 +35,7 @@ class User implements UserInterface//,\Serializable
     private $Email;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=25)
      * @Assert\Length(min="8", minMessage=" 8 caractères minimum")
      * @Assert\EqualTo(propertyPath="Confirm_password", message="Vous devez confirmer ce mot de passe")
      */
