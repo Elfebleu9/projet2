@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base4.html.twig' %}
 
 {% block body %}
     <h1 id="ce"> Confirmation d'inscription </h1>
@@ -8,20 +8,12 @@
 
 
     {% block javascripts %}
-                <script> 
-                        setTimeout(function() {
+                <script type="text/javascript"> 
+                        {# setTimeout(function() {
                                      return $this->render('app_login');
-                         }, 2000);
-                         alert('vous êtes inscrit');
+                         }, 2000); #}
+                         alert("Vous êtes inscrit(e)");
                 </script>
-
-         {# <script> 
-               function confirm(){
-                    {{path('app_login')}}
-               } 
-               window.setTimeout(string confirm, integer 3000);
-         </script>
-          #}
         
     
     {% endblock %}
