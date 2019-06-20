@@ -5,15 +5,9 @@ namespace App\Controller;
 
 use PDO;
 use PDOException;
-use App\Entity\Commcl;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Twig\Loader\ArrayLoader;
-use Twig_Environment;
-use Twig\Loader\ChainLoader;
-use Twig\Loader\FilesystemLoader;
-use Twig\TemplateWrapper;
-
+use Symfony\Component\HttpFoundation\Request;
 
 class Pjim1Controller extends AbstractController
 { 
@@ -88,7 +82,7 @@ class Pjim1Controller extends AbstractController
      /**
      * @Route("/pjim1/posts", name="comsit")
      */
-    public function commentsite(){
+    public function commentsite(Request $request){
         try{ 
             $connexion=new PDO("mysql:host=localhost;dbname=pjim1","root","");
               array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::MYSQL_ATTR_INIT_COMMAND 
@@ -104,8 +98,15 @@ class Pjim1Controller extends AbstractController
         @$contenu=htmlspecialchars($_POST['contenu']);
        
         $insertion=$connexion->prepare('INSERT INTO postspj1 (auteur,contenu) VALUES(?,?)');
-        $insertion->execute(array($auteur,$contenu));
-        
+        $com=$insertion->execute(array($auteur,$contenu));
+
+        // $com->handleRequest($request);
+            // if($com->isExecuted() && $com->isValid()){
+
+                // $this->addFlash('success',' Votre commentaire est enregistré.');
+                // return $this->render('pjim1/commshwpost.html.twig');
+            // }
+
         return $this->render('pjim1/commsite.html.twig');
     }
             

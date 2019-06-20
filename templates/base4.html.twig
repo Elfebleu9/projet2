@@ -74,7 +74,16 @@
 
 
                 <br/><br/>
+                <main class="col-lg-12 col-md-9 col_xl-8 py-md-3 pl-md-5" role="main">
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success">
+                                {{ message }}
 
+                        </div>
+                    {% endfor %}
+
+                   
+                </main>
        
 
             {% block body %}{% endblock %}

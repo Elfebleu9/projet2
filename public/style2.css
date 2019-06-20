@@ -22,7 +22,7 @@ li{
     justify-content:space-between;
     align-items: center;
     text-align:center;
-	background-color:RGBa(219, 190, 000,0.725);
+	background-color:RGBa(255, 190, 000,0.725);
     border:solid 2px hsla(34, 78%, 2%, 0.644);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -310,7 +310,7 @@ li:hover .button{
     display:flex;
     justify-content:space-around;
     align-items:center;
-    background-color:rgba(196, 216, 14, 0.801);
+    background-color:rgba(255, 200, 255, 0.801);
     border:solid 2px hsla(32, 87%, 9%, 0.295);
 	width:100%;
 	height:150px;
