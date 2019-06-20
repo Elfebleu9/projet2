@@ -13,7 +13,6 @@
         
         {% endblock %}
     </head>
-
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a href="{{ path('home')}}"><img src="../Img/logoT.png" alt="photo"></a>
@@ -31,16 +30,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{path('security_registration')}}" style="font-size:25px"><strong>Inscription</strong></a>
                             </li>
-                            <li class="nav-item ">
-                                    <a class="nav-link" href="{{path('shwcomm')}}" style="font-size:25px"><strong>Vos avis</strong></a>
-                            </li>
+                        
 
-                        </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('shwcomm')}}" style="font-size:25px"><strong>Vos avis</strong></a>
+
+                            </li>
+                        {# </div>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{path('app_login')}}" style="font-size:25px"><strong>Connexion</strong></a>
 
-                        </li>
+                        </li> #}
 
                     {% else %}
 
@@ -74,7 +75,7 @@
 
                 <br/><br/>
 
-            <main class="col-lg-12 col-md-9 col_xl-8 py-md-3 pl-md-5" role="main">
+                 <main class="col-lg-12 col-md-9 col_xl-8 py-md-3 pl-md-5" role="main">
                 {% for message in app.flashes('success') %}
                     <div class="alert alert-success">
                             {{ message }}
@@ -84,34 +85,39 @@
 
                 {% block body %}{% endblock %}
             </main>
-        <footer>
+
+       
+
+            
+
+          <footer>
 				<div id="footer">
 					
 					<div class="infos">
 						<div id="Lien">
 							<p>Contact :</p>
 							<p>N° tel : 01.02.03.04.05</p>
-							<p><a href="Mentions légales.html" target="_blank" style="text-decoration:none">Mentions légales</a></p>
-							<p><a href="Politiques.html" target="_blank" style="text-decoration:none">Politiques de confidentialité</a></p>
+							<p><a href="../Mentions légales.html" target="_blank" style="text-decoration:none">Mentions légales</a></p>
+							<p><a href="../Politiques.html" target="_blank" style="text-decoration:none">Politiques de confidentialité</a></p>
 						</div>
 						<div id="App">
 							<p> Nos applications : </p>
-							<a href=" " target="_blank"> <img src="img/Icone4.png" alt="And"></a>&nbsp&nbsp
-							<a href=" "target="_blank"> <img src="img/Icone5.png" alt="IPh"></a>						
+							<a href=" " target="_blank"> <img src="../Img/Icone4.png" alt="And"></a>&nbsp&nbsp
+							<a href=" "target="_blank"> <img src="../Img/Icone5.png" alt="IPh"></a>						
 
 						</div>
 
 						<div id="Icon">
 							<p> Réseaux sociaux : </p>
-							<a href="http://facebook.fr" target="_blank"> <img src="img/Icone1.jpg" alt="Fb"></a>&nbsp&nbsp
-							<a href="http://twitter.com" target="_blank"> <img src="img/Icone2.jpg" alt="Twit"></a>&nbsp&nbsp
-							<a href="http://whatsapp.com" target="_blank"> <img src="img/Icone3.png" alt="WhAp"></a>
+							<a href="http://facebook.fr" target="_blank"> <img src="../Img/Icone1.jpg" alt="Fb"></a>&nbsp&nbsp
+							<a href="http://twitter.com" target="_blank"> <img src="../Img/Icone2.jpg" alt="Twit"></a>&nbsp&nbsp
+							<a href="http://whatsapp.com" target="_blank"> <img src="../Img/Icone3.png" alt="WhAp"></a>
 						</div>		
 					</div>
 					
 				</div>
 	
-		</footer>  
+			</footer>  
         
         {% block javascripts %}
             {{encore_entry_script_tags('app')}}

@@ -36,9 +36,8 @@ class SecurityController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-           
-
-            return $this->redirectToRoute('confirmation');
+            $this->addFlash('success',' Vous êtes bien inscrit(e).');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('security/registration.html.twig',[
@@ -46,11 +45,11 @@ class SecurityController extends AbstractController
 
     }
     /**
-     * @Route("/confirmation", name="confirmation")
+     * @Route("/admin", name="administration")
      */
-    public function confirm(){
+    public function admin(){
 
-        return $this->render('security/confirmation.html.twig');
+        return $this->render('security/admin.html.twig');
 
     }
   
