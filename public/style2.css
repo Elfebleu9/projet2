@@ -173,7 +173,7 @@ li:hover .button{
     min-width:642px; /* maintien de la photo pour le responsive*/
     overflow: hidden;/* maintien de la photo pour le responsive*/
 }
-
+     /* slide aller-retour*/
 #PS{   
     position: relative;
     width: 1000%;
@@ -183,8 +183,7 @@ li:hover .button{
     text-align: left;
     animation: 90s slidy infinite;
 }
-
-    /* slide aller-retour*/
+  
 @keyframes slidy{
     0% { left: 0%; }
     4% { left: 0%; }
@@ -229,10 +228,7 @@ li:hover .button{
 .flex{
 	margin-top: 30px;
     display:flex;
-    z-index: 2;
-	align-items:space-between;
 	justify-content:space-around;
-	flex-wrap: wrap;
 }
 
 #wp{   
@@ -329,7 +325,7 @@ li:hover .button{
     .media-disparait{
         display: none;
     }
-
+    /* centrage et alignement en colonne des photos cliquables*/
     .flex{
         justify-content: center;
     }
@@ -345,7 +341,7 @@ li:hover .button{
     #container{
         display:block;
     }
- 
+    /*alignement vertical blocs à lire et slide*/
     #cont1, #cont2, #cont3{
         width: 100%;
         border-right: none;
